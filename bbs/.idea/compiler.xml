@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for pms-dao" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="pms-dao" />
+      </profile>
+      <profile default="false" name="Annotation profile for pms-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="pms-service" />
+      </profile>
+      <profile default="false" name="Annotation profile for pms-worker" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="pms-worker" />
+      </profile>
+      <profile default="false" name="Annotation profile for pms-domain" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="pms-domain" />
+      </profile>
+      <profile default="false" name="Annotation profile for pms-common" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="pms-common" />
+      </profile>
+      <profile default="false" name="Annotation profile for pms-web" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="pms-web" />
+      </profile>
+      <profile default="false" name="Annotation profile for pms-rpc" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="pms-rpc" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="bbs-common" />
+        <module name="bbs-dao" />
+        <module name="bbs-domain" />
+        <module name="bbs-rpc" />
+        <module name="bbs-service" />
+        <module name="bbs-web" />
+        <module name="bbs-worker" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bbs" target="1.5" />
+      <module name="bbs-common" target="1.8" />
+      <module name="bbs-dao" target="1.8" />
+      <module name="bbs-domain" target="1.8" />
+      <module name="bbs-rpc" target="1.8" />
+      <module name="bbs-service" target="1.8" />
+      <module name="bbs-web" target="1.8" />
+      <module name="bbs-worker" target="1.8" />
+      <module name="pms" target="1.5" />
+      <module name="pms-common" target="1.8" />
+      <module name="pms-dao" target="1.8" />
+      <module name="pms-domain" target="1.8" />
+      <module name="pms-rpc" target="1.8" />
+      <module name="pms-service" target="1.8" />
+      <module name="pms-web" target="1.8" />
+      <module name="pms-worker" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

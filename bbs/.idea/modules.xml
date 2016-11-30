@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bbs.iml" filepath="$PROJECT_DIR$/.idea/bbs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-common/bbs-common.iml" filepath="$PROJECT_DIR$/bbs-common/bbs-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-dao/bbs-dao.iml" filepath="$PROJECT_DIR$/bbs-dao/bbs-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-domain/bbs-domain.iml" filepath="$PROJECT_DIR$/bbs-domain/bbs-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-rpc/bbs-rpc.iml" filepath="$PROJECT_DIR$/bbs-rpc/bbs-rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-service/bbs-service.iml" filepath="$PROJECT_DIR$/bbs-service/bbs-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-web/bbs-web.iml" filepath="$PROJECT_DIR$/bbs-web/bbs-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-worker/bbs-worker.iml" filepath="$PROJECT_DIR$/bbs-worker/bbs-worker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pms-common/pms-common.iml" filepath="$PROJECT_DIR$/pms-common/pms-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pms-dao/pms-dao.iml" filepath="$PROJECT_DIR$/pms-dao/pms-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pms-domain/pms-domain.iml" filepath="$PROJECT_DIR$/pms-domain/pms-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pms-rpc/pms-rpc.iml" filepath="$PROJECT_DIR$/pms-rpc/pms-rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pms-service/pms-service.iml" filepath="$PROJECT_DIR$/pms-service/pms-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pms-web/pms-web.iml" filepath="$PROJECT_DIR$/pms-web/pms-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pms-worker/pms-worker.iml" filepath="$PROJECT_DIR$/pms-worker/pms-worker.iml" />
+    </modules>
+  </component>
+</project>
