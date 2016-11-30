@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jzfq.pms.dao.RepayCompanyMapper">
-  <resultMap id="BaseResultMap" type="com.jzfq.pms.domain.RepayCompany">
+<mapper namespace="com.shareniu.bbs.dao.RepayCompanyMapper">
+  <resultMap id="BaseResultMap" type="com.shareniu.bbs.domain.RepayCompany">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="company_name" jdbcType="VARCHAR" property="companyName" />
     <result column="company_email" jdbcType="VARCHAR" property="companyEmail" />
@@ -25,7 +25,7 @@
     delete from repay_company
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.jzfq.pms.domain.RepayCompany">
+  <insert id="insert" parameterType="com.shareniu.bbs.domain.RepayCompany">
     insert into repay_company (id, company_name, company_email, 
       company_address, telephone, last_update_time, 
       del_flag, remark)
@@ -33,7 +33,7 @@
       #{companyAddress,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
       #{delFlag,jdbcType=TINYINT}, #{remark,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.jzfq.pms.domain.RepayCompany">
+  <insert id="insertSelective" parameterType="com.shareniu.bbs.domain.RepayCompany">
     insert into repay_company
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -88,7 +88,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jzfq.pms.domain.RepayCompany">
+  <update id="updateByPrimaryKeySelective" parameterType="com.shareniu.bbs.domain.RepayCompany">
     update repay_company
     <set>
       <if test="companyName != null">
@@ -115,7 +115,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jzfq.pms.domain.RepayCompany">
+  <update id="updateByPrimaryKey" parameterType="com.shareniu.bbs.domain.RepayCompany">
     update repay_company
     set company_name = #{companyName,jdbcType=VARCHAR},
       company_email = #{companyEmail,jdbcType=VARCHAR},

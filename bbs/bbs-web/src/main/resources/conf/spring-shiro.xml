@@ -24,7 +24,7 @@
     </bean>
 
     <!-- Realm实现 -->
-    <bean id="userRealm" class="com.jzfq.pms.shiro.UserRealm">
+    <bean id="userRealm" class="com.shareniu.bbs.shiro.UserRealm">
         <property name="cachingEnabled" value="false"/>
         <property name="credentialsMatcher" ref="credentialsMatcher"/>
     </bean>
@@ -82,7 +82,7 @@
     </bean>
 
     <!-- 基于Form表单的身份验证过滤器 -->
-    <bean id="formAuthenticationFilter" class="com.jzfq.pms.shiro.CustomFormAuthenticationFilter">
+    <bean id="formAuthenticationFilter" class="com.shareniu.bbs.shiro.CustomFormAuthenticationFilter">
         <property name="loginUrl" value="/dologin"/>
     </bean>
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jzfq.pms.dao.SysUserMapper">
+<mapper namespace="com.shareniu.bbs.dao.SysUserMapper">
 
-  <resultMap id="BaseResultMap" type="com.jzfq.pms.domain.SysUser">
+  <resultMap id="BaseResultMap" type="com.shareniu.bbs.domain.SysUser">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="real_name" jdbcType="VARCHAR" property="realName" />
@@ -41,7 +41,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{delFlag,jdbcType=TINYINT})
   </insert>-->
 
-  <insert id="insertSelective" parameterType="com.jzfq.pms.domain.SysUser">
+  <insert id="insertSelective" parameterType="com.shareniu.bbs.domain.SysUser">
     insert into sys_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -109,7 +109,7 @@
     </trim>
   </insert>
 
-  <update id="updateByPrimaryKeySelective" parameterType="com.jzfq.pms.domain.SysUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.shareniu.bbs.domain.SysUser">
     update sys_user
     <set>
       <if test="username != null">
@@ -156,7 +156,7 @@
       FROM sys_user WHERE username = #{username} and password = #{pwd}
   </select>
 
-  <select id="findUserList" parameterType="com.jzfq.pms.common.common.PageVo" resultMap="BaseResultMap">
+  <select id="findUserList" parameterType="com.shareniu.bbs.common.common.PageVo" resultMap="BaseResultMap">
       SELECT <include refid="Base_Column_List"/>
       FROM sys_user WHERE del_flag = 0
     <if test="vo.parameters.username!=null">
@@ -192,7 +192,7 @@
     </if>
   </select>
 
-  <update id="modifyPassword" parameterType="com.jzfq.pms.domain.SysUser">
+  <update id="modifyPassword" parameterType="com.shareniu.bbs.domain.SysUser">
     update sys_user
     set
     password = #{password,jdbcType=VARCHAR}

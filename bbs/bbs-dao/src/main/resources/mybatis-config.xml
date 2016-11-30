@@ -10,7 +10,7 @@
     </settings>
 
     <plugins>
-        <plugin interceptor="com.jzfq.pms.interceptor.PageInterceptor">
+        <plugin interceptor="com.shareniu.bbs.interceptor.PageInterceptor">
             <property name="dialectClass" value="com.shareniu.bbs.interceptor.MysqlDialect"/>
         </plugin>
     </plugins>

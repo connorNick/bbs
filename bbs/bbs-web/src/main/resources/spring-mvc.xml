@@ -25,7 +25,7 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-    <bean id="dateFormatMapper" class="com.jzfq.pms.common.DateFormatMapper"></bean>
+    <bean id="dateFormatMapper" class="com.shareniu.bbs.common.DateFormatMapper"></bean>
 
 
     <context:component-scan base-package="com.shareniu.bbs">

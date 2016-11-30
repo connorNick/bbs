@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jzfq.pms.dao.RepayCaseMapper">
-    <resultMap id="BaseResultMap" type="com.jzfq.pms.domain.RepayCase" >
+<mapper namespace="com.shareniu.bbs.dao.RepayCaseMapper">
+    <resultMap id="BaseResultMap" type="com.shareniu.bbs.domain.RepayCase" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="case_id" property="caseId" jdbcType="INTEGER" />
     <result column="order_id" property="orderId" jdbcType="INTEGER" />
@@ -39,7 +39,7 @@
     delete from repay_case
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.jzfq.pms.domain.RepayCase" >
+  <insert id="insert" parameterType="com.shareniu.bbs.domain.RepayCase" >
     insert into repay_case (id, case_id, order_id, 
       capital, repay_state, business_area, 
       customer_name, customer_type, phone_number, 
@@ -57,7 +57,7 @@
       #{flowStatus,jdbcType=INTEGER}, #{reminder,jdbcType=INTEGER}, #{repayCompany,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.jzfq.pms.domain.RepayCase" >
+  <insert id="insertSelective" parameterType="com.shareniu.bbs.domain.RepayCase" >
     insert into repay_case
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -190,7 +190,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jzfq.pms.domain.RepayCase" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.shareniu.bbs.domain.RepayCase" >
     update repay_case
     <set >
       <if test="caseId != null" >
@@ -256,7 +256,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jzfq.pms.domain.RepayCase" >
+  <update id="updateByPrimaryKey" parameterType="com.shareniu.bbs.domain.RepayCase" >
     update repay_case
     set case_id = #{caseId,jdbcType=INTEGER},
       order_id = #{orderId,jdbcType=INTEGER},
@@ -281,7 +281,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="findCaseList" parameterType="com.jzfq.pms.common.common.PageVo" resultMap="BaseResultMap">
+  <select id="findCaseList" parameterType="com.shareniu.bbs.common.common.PageVo" resultMap="BaseResultMap">
     SELECT <include refid="Base_Column_List" />
     FROM repay_case WHERE 1=1
     <if test="vo.parameters.caseId!=null">
@@ -400,7 +400,7 @@
     </if>     
   </select>
   
-   <update id="updateReminderByIds" parameterType="com.jzfq.pms.domain.RepayCase">
+   <update id="updateReminderByIds" parameterType="com.shareniu.bbs.domain.RepayCase">
 	    update repay_case
 	    set reminder=#{reminder},
 	    flow_status=#{flowStatus},
@@ -414,7 +414,7 @@
        </if>
     </update>
     
-     <update id="updateCompanyNameByIds" parameterType="com.jzfq.pms.domain.RepayCase">
+     <update id="updateCompanyNameByIds" parameterType="com.shareniu.bbs.domain.RepayCase">
 	    update repay_case
 	    set repay_company=#{companyId},
 	    flow_status=#{flowStatus},

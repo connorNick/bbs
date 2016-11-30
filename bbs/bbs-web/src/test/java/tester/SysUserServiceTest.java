@@ -1,8 +1,8 @@
 package tester;
 
-import com.jzfq.pms.common.common.PageVo;
-import com.jzfq.pms.domain.SysUser;
-import com.jzfq.pms.service.ISysUserService;
+import com.shareniu.bbs.common.common.PageVo;
+import com.shareniu.bbs.domain.SysUser;
+import com.shareniu.bbs.service.ISysUserService;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
