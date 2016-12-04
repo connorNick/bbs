@@ -28,7 +28,7 @@ public class IndexController extends BaseController {
 	@RequestMapping("/index")
 	public ModelAndView index(ModelAndView mv,HttpServletRequest request){
 	    mv.setViewName("/front/index");
-		System.out.println(1);
+		System.out.println(5);
 		return mv;
 	}
 }
