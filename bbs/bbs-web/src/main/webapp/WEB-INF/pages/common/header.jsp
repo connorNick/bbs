@@ -3,19 +3,20 @@
 <meta content="" name="description" />
 <meta content="" name="author" />
 <!-- ================== BEGIN BASE CSS STYLE ================== -->
-<link href="/static/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
-<link href="/static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link href="/static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-<link href="/static/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
-<link href="/static/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
-<link href="/static/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
-<link href="/static/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
-<link href="/static/plugins/DataTables/css/data-table.css" rel="stylesheet" />
 
-<link href="/static/css/animate.min.css" rel="stylesheet" />
-<link href="/static/css/style.min.css" rel="stylesheet" />
-<link href="/static/css/style-responsive.min.css" rel="stylesheet" />
-<link href="/static/css/theme/default.css" rel="stylesheet" id="theme" />
+
+<link href="/frontstatic/css/all.css" rel="stylesheet" />
+<link href="/frontstatic/css/style.css" rel="stylesheet" />
+<link href="/frontstatic/css/style_2_common.css" rel="stylesheet" />
+<link href="/frontstatic/css/style_2_forum_forumdisplay.css" rel="stylesheet" />
+<link href="/frontstatic/css/style_2_forum_index.css" rel="stylesheet" />
+<link href="/frontstatic/css/style_2_forum_viewthread.css" rel="stylesheet" />
+<link href="/frontstatic/css/index.css" rel="stylesheet" />
+<link href="/frontstatic/css/main.css" rel="stylesheet" />
+<link href="/frontstatic/css/cssreset.css" rel="stylesheet" />
+<link href="/frontstatic/css/fix.css" rel="stylesheet" />
+<link href="/frontstatic/css/float.css" rel="stylesheet" />
+
 <!-- ================== END BASE CSS STYLE ================== -->
 
 <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
