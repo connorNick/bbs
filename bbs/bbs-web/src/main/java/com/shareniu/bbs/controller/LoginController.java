@@ -3,7 +3,7 @@ package com.shareniu.bbs.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import com.shareniu.bbs.common.JsonResult;
-import com.shareniu.bbs.domain.SysUser;
+import com.shareniu.bbs.domain.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -30,11 +30,11 @@ public class LoginController {
      * 登录页面
      *
      * @return
-     */
+     *//*
     @RequestMapping("index")
     public String index() {
         return "login";
-    }
+    }*/
 
     /**
      *
@@ -63,7 +63,7 @@ public class LoginController {
 
         String loginFailure = (String) request.getAttribute("shiroLoginFailure");
         JsonResult loginMessage=new JsonResult();
-        SysUser user=new SysUser();
+        User user=new User();
         //可以在这里放 错误信息  从这里就可以拿到认证异常了
         if (loginFailure != null) {
         	 String username = WebUtils.getCleanParam(request,"username");
