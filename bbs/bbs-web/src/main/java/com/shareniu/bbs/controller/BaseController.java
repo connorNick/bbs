@@ -6,7 +6,7 @@ import com.shareniu.bbs.common.common.PageVo;
 import com.shareniu.bbs.common.common.Pageable;
 import com.shareniu.bbs.common.exception.ServiceException;
 import com.shareniu.bbs.interceptor.PageList;
-import com.shareniu.bbs.service.IDictionaryService;
+import com.shareniu.bbs.service.UserService;
 
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -35,7 +35,7 @@ public class BaseController {
     private static final Logger log = LoggerFactory.getLogger("BaseController");
 
     @Autowired
-    private IDictionaryService dictionaryService;
+    private UserService dictionaryService;
 
     /**
      * 表格数据加载请求：封裝表格(dataTable)的ajax请求參數
