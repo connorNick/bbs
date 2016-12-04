@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shareniu.bbs.dao.TopicReplyMapper">
+  <resultMap id="BaseResultMap" type="com.shareniu.bbs.domain.TopicReply">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="count" jdbcType="VARCHAR" property="count" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="topic_id" jdbcType="INTEGER" property="topicId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="parent_repay_id" jdbcType="INTEGER" property="parentRepayId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, count, user_id, topic_id, create_time, parent_repay_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from topic_reply
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from topic_reply
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.shareniu.bbs.domain.TopicReply">
+    insert into topic_reply (id, count, user_id, 
+      topic_id, create_time, parent_repay_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{count,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, 
+      #{topicId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{parentRepayId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shareniu.bbs.domain.TopicReply">
+    insert into topic_reply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="count != null">
+        count,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="topicId != null">
+        topic_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="parentRepayId != null">
+        parent_repay_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="count != null">
+        #{count,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="topicId != null">
+        #{topicId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentRepayId != null">
+        #{parentRepayId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shareniu.bbs.domain.TopicReply">
+    update topic_reply
+    <set>
+      <if test="count != null">
+        count = #{count,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="topicId != null">
+        topic_id = #{topicId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentRepayId != null">
+        parent_repay_id = #{parentRepayId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shareniu.bbs.domain.TopicReply">
+    update topic_reply
+    set count = #{count,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      topic_id = #{topicId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      parent_repay_id = #{parentRepayId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
