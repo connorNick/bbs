@@ -1,8 +1,6 @@
 package tester;
 
 import com.shareniu.bbs.common.common.PageVo;
-import com.shareniu.bbs.domain.SysUser;
-import com.shareniu.bbs.service.ISysUserService;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,12 +17,10 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 @TransactionConfiguration
 public class SysUserServiceTest {
 
-    @Autowired
-    private ISysUserService sysUserService;
 
     @Test
     public void getAllUserTest() throws Exception{
-        SysUser user = new SysUser();
+        //SysUser user = new SysUser();
         PageVo vo = new PageVo();
 //        List<SysUser> list =  sysUserService.findUserList(vo);
 //        Assert.assertTrue(!list.equals(null));
