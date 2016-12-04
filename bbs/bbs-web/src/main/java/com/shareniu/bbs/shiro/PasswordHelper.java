@@ -1,7 +1,6 @@
 package com.shareniu.bbs.shiro;
 
-import com.shareniu.bbs.domain.SysUser;
-
+import com.shareniu.bbs.domain.User;
 import org.apache.shiro.crypto.RandomNumberGenerator;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
@@ -22,7 +21,7 @@ public class PasswordHelper {
      *
      * @param user
      */
-    public static SysUser encryptPassword(SysUser user) {
+    public static User encryptPassword(User user) {
         user.setSalt(randomNumberGenerator.nextBytes().toHex());
         user.setCredentialsSalt(user.getUsername() + user.getSalt());
         String newPassword = new SimpleHash(
@@ -35,9 +34,9 @@ public class PasswordHelper {
     }
 
     public static void main(String[] args) {
-        SysUser u = new SysUser();
-        u.setUsername("zhishuo");
-        u.setPassword("zhishuo");
+        User u = new User();
+        u.setUsername("admin");
+        u.setPassword("admin");
         new PasswordHelper().encryptPassword(u);
         System.out.println(u.getPassword() + "-" + u.getSalt());
     }
