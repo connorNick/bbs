@@ -13,7 +13,7 @@
     </context-param>
     <context-param>
         <param-name>webAppRootKey</param-name>
-        <param-value>fms</param-value>
+        <param-value>bbs</param-value>
     </context-param>
 
 

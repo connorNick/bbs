@@ -1,9 +1,9 @@
 package com.shareniu.bbs.shiro;
 
 import com.shareniu.bbs.common.constants.Constants;
-import com.shareniu.bbs.domain.SysUser;
-import com.shareniu.bbs.service.ISysUserService;
 
+import com.shareniu.bbs.domain.User;
+import com.shareniu.bbs.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -28,17 +28,17 @@ public class UserRealm extends AuthorizingRealm {
     private static final Logger log = LoggerFactory.getLogger("UserRealm");
 
     @Autowired
-    private ISysUserService sysUserService;
+    private UserService userService;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        SysUser user = (SysUser) principals.getPrimaryPrincipal();
+        User user = (User) principals.getPrimaryPrincipal();
 
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         //添加用户的角色以及 权限
-        authorizationInfo.setRoles(sysUserService.getRoleNameSetByUsername(user.getUsername()));
+        //authorizationInfo.setRoles(sysUserService.getRoleNameSetByUsername(user.getUsername()));
         log.info("已经添加用户的角色~~~");
-        authorizationInfo.setStringPermissions(sysUserService.getAuthSetByUsername(user.getUsername()));
+        //authorizationInfo.setStringPermissions(sysUserService.getAuthSetByUsername(user.getUsername()));
         log.info("已经添加用户的权限~~~");
         return authorizationInfo;
     }
@@ -56,15 +56,15 @@ public class UserRealm extends AuthorizingRealm {
         
         //对用户信息进行验证 
         String username = (String) token.getPrincipal();
-        SysUser user = sysUserService.getUserByUserName(username);
+        User user = userService.getUserByUserName(username);
 
         if (user == null) {
             throw new UnknownAccountException();//没找到帐号
         }
 
-        if (Constants.ONE == user.getDelFlag()) {
+        /*if (Constants.ONE == user.getDelFlag()) {
             throw new LockedAccountException(); //帐号锁定
-        }        
+        }  */
         if(!username.equalsIgnoreCase(user.getUsername())){
         	throw new UnknownAccountException("用户名错误");
         }  
