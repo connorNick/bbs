@@ -7,7 +7,7 @@ package com.shareniu.bbs.enums;
  */
 public enum RoleEnum {
 
-	SUPER_ADMIN(1,"超级管理员"),
+	/*SUPER_ADMIN(1,"超级管理员"),
 	ADMIN(2,"管理员");
 
 	private int key;
@@ -41,5 +41,5 @@ public enum RoleEnum {
 
 	public void setDesc(String desc) {
 		this.desc = desc;
-	}
+	}*/
 }
