@@ -1,20 +1,24 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<title></title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<link rel="stylesheet" href="css/cssreset.css">
-<link rel="stylesheet" type="text/css" href="css/all.css">
-
-<script type="text/javascript" src="js/jquery.js"></script>
-
-
-<link href="css/main.css" type="text/css" rel="stylesheet">
-<link href="css/fix.css" type="text/css" rel="stylesheet">
-
-<link charset="utf-8" type="text/css" href="css/float.css" rel="stylesheet"/>
+<!--[if IE 8]> <html lang="zh" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+%>
+<head>
+	<meta charset="utf-8" />
+	<title>主页面</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<jsp:include page="../common/header.jsp"/>
+	<%@include file="../common/taglib.jsp"%>
+	<!-- ================== END BASE CSS STYLE ================== -->
+</head>
 
 <body>
 
@@ -30,7 +34,7 @@
 </div>
 <div id="header">
 	<div>
-		<a href="http://www.crxy.cn/" title="超人学院"><img src="images/logo.png" alt="超人学院" height="70px"></a>
+		<a href="http://www.crxy.cn/" title="超人学院"><img src="/frontstatic/images/logo.png" alt="超人学院" height="70px"></a>
 	</div>
 	<div style="padding:0">
 		<ul>
@@ -46,15 +50,15 @@
 				<div class="no-nav">
 					<ul>
 						<li>
-							<a href="http://www.crxy.cn/course" title="视频下载"><img src="images/yun.jpg" width="70px"></a>
+							<a href="http://www.crxy.cn/course" title="视频下载"><img src="/frontstatic/images/yun.jpg" width="70px"></a>
 							<span><a href="http://www.crxy.cn/course" id="title6" title="视频下载"><h1>视频下载</h1></a></span>
 						</li>
 						<li>
-							<a href="#" onclick="toOpenCourse()" title="公开课"><img src="images/ku.jpg" width="70px"></a>
+							<a href="#" onclick="toOpenCourse()" title="公开课"><img src="/frontstatic/images/ku.jpg" width="70px"></a>
 							<span><a href="#" id="title6" title="公开课" onclick="toOpenCourse()"><h1>公开课</h1></a></span>
 						</li>
 						<li>
-							<a href="http://www.crxy.cn/word" title="技术文档"><img src="images/open.jpg" width="70px"></a>
+							<a href="http://www.crxy.cn/word" title="技术文档"><img src="/frontstatic/images/open.jpg" width="70px"></a>
 							<span><a href="http://www.crxy.cn/word" title="技术文档" id="title6"><h1>技术文档</h1></a></span>
 						</li>
 					</ul>
@@ -70,8 +74,8 @@
 		</span>
 	</div> -->
 </div>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/countdown.js"></script>
+<script type="text/javascript" src="/frontstatic/js/jquery.js"></script>
+<script type="text/javascript" src="/frontstatic/js/countdown.js"></script>
 <script type="text/javascript">
 var from = '0';
 var isCanSave = false;
@@ -327,7 +331,7 @@ function click_(num){
 	</div>
 	<div class="foot-bottom">
 		<div>
-			<a href="http://www.crxy.cn/" title="超人学院"><img src="images/logo.png" alt="" width="150px"></a>
+			<a href="http://www.crxy.cn/" title="超人学院"><img src="/frontstatic/images/logo.png" alt="" width="150px"></a>
 			<p><span>京ICP备13032771号-21</span> 
 			<span>友情连接：<a href="http://www.cbdio.com/">大数据新闻</a></span><br> 
 			<span>学院地址：北京市昌平区天通苑西三区天通伟业写字楼3楼315室</span></p>
