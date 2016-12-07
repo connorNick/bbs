@@ -18,6 +18,50 @@
                     <li><a href="finance">查询</a></li>
                 </ul>
             </li>
+
+            <%--</shiro:hasRole>--%>
+
+              <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret pull-right"></b>
+                    <i class="fa fa-laptop"></i>
+                    <span>主题管理</span>
+                </a>
+                <ul class="sub-menu">
+                     <li><a href="/topic/tolist">主题列表</a></li>
+                </ul>
+              </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret pull-right"></b>
+                    <i class="fa fa-laptop"></i>
+                    <span>帖文管理</span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="/repay/tolist?flowStatus=0&caseStatus=0">贴文列表</a></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret pull-right"></b>
+                    <i class="fa fa-laptop"></i>
+                    <span>用户管理</span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="/repay/tolist?flowStatus=0&caseStatus=0">用户列表</a></li>
+                </ul>
+            </li>
+
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret pull-right"></b>
+                    <i class="fa fa-laptop"></i>
+                    <span>系统配置</span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="/sysdic/tolist">数据字典</a></li>
+                </ul>
+            </li>
             <%--<shiro:hasRole name="超级管理员">--%>
             <li class="has-sub">
                 <a href="javascript:;">
@@ -30,59 +74,6 @@
                     <li class="active"><a href="/sysuser/tolist">用户管理</a></li>
                     <li><a href="/sysrole/tolist">角色管理</a></li>
                     <li><a href="/sysauth/tolist">资源管理</a></li>
-                </ul>
-            </li>
-            <%--</shiro:hasRole>--%>
-
-              <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret pull-right"></b>
-                    <i class="fa fa-laptop"></i>
-                    <span>催收管理</span>
-                </a>
-                <ul class="sub-menu">
-                     <li><a href="/repay/tolist?flowStatus=0&caseStatus=0">待经理分配案件</a></li>
-                     <li><a href="/repay/tolist?flowStatus=1&caseStatus=0">待主管分配案件</a></li>
-                     <li><a href="/repay/tolist?flowStatus=2&caseStatus=1">催收中案件</a></li>
-                     <li><a href="/repay/tolist?flowStatus=2&caseStatus=5">已还款案件</a></li>
-                </ul>
-              </li>
-
-               <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret pull-right"></b>
-                    <i class="fa fa-laptop"></i>
-                    <span>退案管理</span>
-                </a>
-                <ul class="sub-menu">
-                     <li><a href="#">主管退案申请</a></li>
-                     <li><a href="#">专员退案申请</a></li>
-                </ul>
-              </li>
-
-               <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret pull-right"></b>
-                    <i class="fa fa-laptop"></i>
-                    <span>案件综合查询</span>
-                </a>
-              </li>
-               <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret pull-right"></b>
-                    <i class="fa fa-laptop"></i>
-                    <span>催收公司管理</span>
-                </a>
-              </li>
-
-            <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret pull-right"></b>
-                    <i class="fa fa-laptop"></i>
-                    <span>系统配置</span>
-                </a>
-                <ul class="sub-menu">
-                    <li><a href="/sysdic/tolist">数据字典</a></li>
                 </ul>
             </li>
             <!-- begin sidebar minify button -->

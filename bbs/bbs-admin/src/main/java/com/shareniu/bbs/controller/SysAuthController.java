@@ -48,7 +48,7 @@ public class SysAuthController extends BaseController {
     @RequestMapping(value="/queryTableData",method = RequestMethod.GET)
     @ResponseBody
     public DataTable<SysAuth> queryTableData(HttpServletRequest request) {
-        PageVo vo =  parametToPageVo(request,SysAuth.class);
+        PageVo vo =  parametToPageVo(request);
         PageList<SysAuth> list = sysAuthService.queryAuthList(vo);
         DataTable data = resultToDataTable(list);
         return data;

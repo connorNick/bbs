@@ -6,20 +6,43 @@
     <file url="file://$PROJECT_DIR$/bbs-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bbs-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bbs-dao/src/main/java/com/shareniu/bbs/dao/CategoryMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-dao/src/main/java/com/shareniu/bbs/dao/DictionaryMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-dao/src/main/java/com/shareniu/bbs/dao/SysAuthMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-dao/src/main/java/com/shareniu/bbs/dao/SysRoleMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-dao/src/main/java/com/shareniu/bbs/dao/SysUserMapper.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-dao/src/main/java/com/shareniu/bbs/dao/TopicMapper.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-dao/src/main/java/com/shareniu/bbs/dao/TopicReplyMapper.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-dao/src/main/java/com/shareniu/bbs/dao/UserMapper.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-dao/src/main/resources/mapping/CategoryMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-dao/src/main/resources/mapping/DictionaryMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-dao/src/main/resources/mapping/SysAuthMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-dao/src/main/resources/mapping/SysRoleMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-dao/src/main/resources/mapping/SysUserMapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-dao/src/main/resources/mapping/TopicMapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-dao/src/main/resources/mapping/TopicReplyMapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-dao/src/main/resources/mapping/UserMapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-domain" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/domain/Category.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/domain/Dictionary.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/domain/SysAuth.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/domain/SysRole.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/domain/SysRoleAuth.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/domain/SysUser.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/domain/Topic.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/domain/TopicReply.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/domain/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/vo/RootMenu.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-domain/src/main/java/com/shareniu/bbs/vo/ValidOrderVo.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-rpc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bbs-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bbs-service/src/main/java/com/shareniu/bbs/service/IDictionaryService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-service/src/main/java/com/shareniu/bbs/service/ISysAuthService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-service/src/main/java/com/shareniu/bbs/service/ISysRoleService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-service/src/main/java/com/shareniu/bbs/service/ISysUserService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-service/src/main/java/com/shareniu/bbs/service/impl/DictionaryServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-service/src/main/java/com/shareniu/bbs/service/impl/SysAuthServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-service/src/main/java/com/shareniu/bbs/service/impl/SysRoleServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/bbs-service/src/main/java/com/shareniu/bbs/service/impl/SysUserServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bbs-web/src/main/webapp/WEB-INF/pages/front/content.jsp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/bbs-web/src/main/webapp/WEB-INF/pages/front/index.jsp" charset="GBK" />

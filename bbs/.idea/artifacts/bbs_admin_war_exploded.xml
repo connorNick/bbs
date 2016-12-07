@@ -1,33 +1,33 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="pms-web:war exploded">
-    <output-path>$PROJECT_DIR$/pms-web/target/pms</output-path>
+  <artifact type="exploded-war" name="bbs-admin:war exploded">
+    <output-path>$PROJECT_DIR$/bbs-admin/target/bbs</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="pms-web" />
+          <element id="module-output" name="bbs-admin" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.google.code.kaptcha:kaptcha:2.3.2" />
-          <element id="archive" name="pms-service-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="pms-service" />
+          <element id="archive" name="bbs-service-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="bbs-service" />
           </element>
-          <element id="archive" name="pms-rpc-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="pms-rpc" />
+          <element id="archive" name="bbs-rpc-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="bbs-rpc" />
           </element>
-          <element id="archive" name="pms-domain-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="pms-domain" />
+          <element id="archive" name="bbs-domain-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="bbs-domain" />
           </element>
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-mongodb:1.7.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.10.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.10" />
-          <element id="archive" name="pms-dao-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="pms-dao" />
+          <element id="archive" name="bbs-dao-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="bbs-dao" />
           </element>
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.4" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.2" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.29" />
-          <element id="archive" name="pms-common-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="pms-common" />
+          <element id="archive" name="bbs-common-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="bbs-common" />
           </element>
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.6" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.9" />
@@ -94,9 +94,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/pms-web/target/pms/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/bbs-admin/target/bbs/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="pms-web/web/Web" />
+      <element id="javaee-facet-resources" facet="bbs-admin/web/Web" />
     </root>
   </artifact>
 </component>

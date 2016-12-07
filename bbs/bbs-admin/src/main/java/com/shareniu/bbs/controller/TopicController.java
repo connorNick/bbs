@@ -4,8 +4,10 @@ import com.shareniu.bbs.common.JsonResult;
 import com.shareniu.bbs.common.common.DataTable;
 import com.shareniu.bbs.common.common.PageVo;
 import com.shareniu.bbs.domain.Dictionary;
+import com.shareniu.bbs.domain.Topic;
 import com.shareniu.bbs.interceptor.PageList;
 import com.shareniu.bbs.service.IDictionaryService;
+import com.shareniu.bbs.service.TopicService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,20 +21,20 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping("/sysdic")
-public class DictionaryController extends BaseController {
+@RequestMapping("/topic")
+public class TopicController extends BaseController {
 	
-	private static final Logger LOGGER=LoggerFactory.getLogger(DictionaryController.class);
+	private static final Logger LOGGER=LoggerFactory.getLogger(TopicController.class);
 
 	@Autowired
-	private IDictionaryService dictionaryService;
+	private TopicService topicService;
 	
 	/**
 	 * 去往案件管理列表
 	 */
 	@RequestMapping("/tolist")
 	public ModelAndView tolist(ModelAndView mv){
-		mv.setViewName("sysconfig/sysdic_list");
+		mv.setViewName("topic/topic_list");
 		return mv;
 	}
 
@@ -41,9 +43,9 @@ public class DictionaryController extends BaseController {
 	 */
 	@RequestMapping(value="/queryTableData",method = RequestMethod.GET)
 	@ResponseBody
-	public DataTable<Dictionary> queryTableData(HttpServletRequest request) {
+	public DataTable<Topic> queryTableData(HttpServletRequest request) {
 		PageVo vo =  parametToPageVo(request);
-		PageList<Dictionary> list = dictionaryService.findDictionaryList(vo);
+		PageList<Topic> list = topicService.findTopicList(vo);
 		DataTable data = resultToDataTable(list);
 		return data;
 	}
@@ -54,7 +56,7 @@ public class DictionaryController extends BaseController {
 	 */
 	@RequestMapping("/toadd")
 	public ModelAndView toAdd(ModelAndView mv){
-		mv.setViewName("sysconfig/sysdic_add");
+		mv.setViewName("topic/topic_add");
 		return mv;
 	}
 
@@ -63,8 +65,8 @@ public class DictionaryController extends BaseController {
 	 */
 	@RequestMapping("/toedit/{id}")
 	public ModelAndView toEdit(@PathVariable Integer id, ModelAndView mv){
-		mv.addObject("dictionary", dictionaryService.getDictionaryById(id));
-		mv.setViewName("sysconfig/sysdic_add");
+		//mv.addObject("dictionary", topicService.getDictionaryById(id));
+		mv.setViewName("topic/topic_add");
 		return mv;
 	}
 
@@ -74,11 +76,11 @@ public class DictionaryController extends BaseController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String addUser(Dictionary d) {
 		if(d.getId() != null && d.getId() > 0){
-			dictionaryService.updateDictionary(d);
+			//topicService.updateDictionary(d);
 		}else{
-			dictionaryService.addDictionary(d);
+			//topicService.addDictionary(d);
 		}
-		return "redirect:/sysconfig/tolist";
+		return "redirect:/topic/tolist";
 	}
 
 	/**
@@ -87,12 +89,13 @@ public class DictionaryController extends BaseController {
 	@RequestMapping("/del/{id}")
 	public @ResponseBody
 	JsonResult delUser(@PathVariable Integer id){
-		boolean result = dictionaryService.delDictionary(id);
+		/*boolean result = null;//dictionaryService.delDictionary(id);
 		if(result){
 			return returnSuccess("操作成功！");
 		}else{
 			return JsonResult.createErrorMsg("操作失败！");
-		}
+		}*/
+		return null;
 	}
 
 

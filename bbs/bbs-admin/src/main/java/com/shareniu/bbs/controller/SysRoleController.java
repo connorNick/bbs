@@ -51,7 +51,7 @@ public class SysRoleController extends BaseController {
     @RequestMapping(value="/queryTableData",method = RequestMethod.GET)
     @ResponseBody
     public DataTable<SysRole> queryTableData(HttpServletRequest request) {
-        PageVo vo =  parametToPageVo(request,SysRole.class);
+        PageVo vo =  parametToPageVo(request);
         PageList<SysRole> list = sysRoleService.queryRoleList(vo);
         DataTable data = resultToDataTable(list);
         return data;

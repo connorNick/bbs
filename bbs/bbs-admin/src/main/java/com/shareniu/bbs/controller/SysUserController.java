@@ -52,7 +52,7 @@ public class SysUserController extends BaseController {
     @RequestMapping(value="/queryTableData",method = RequestMethod.GET)
     @ResponseBody
     public DataTable<SysUser> queryTableData(HttpServletRequest request) {
-        PageVo vo =  parametToPageVo(request,SysUser.class);
+        PageVo vo =  parametToPageVo(request);
         PageList<SysUser> list = sysUserService.findUserList(vo);
         DataTable data = resultToDataTable(list);
         return data;

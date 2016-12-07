@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <!-- begin mobile sidebar expand / collapse button -->
         <div class="navbar-header">
-            <a href="#" class="navbar-brand"><span class="navbar-logo"></span> 催收系统 </a>
+            <a href="#" class="navbar-brand"><span class="navbar-logo"></span>  分享牛管理系统 </a>
             <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
