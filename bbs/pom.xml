@@ -17,6 +17,7 @@
     <module>bbs-dao</module>
     <module>bbs-rpc</module>
     <module>bbs-worker</module>
+	  <module>bbs-admin</module>
   </modules>
   
   <build>

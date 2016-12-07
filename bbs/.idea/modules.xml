@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/bbs.iml" filepath="$PROJECT_DIR$/.idea/bbs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-admin/bbs-admin.iml" filepath="$PROJECT_DIR$/bbs-admin/bbs-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbs-common/bbs-common.iml" filepath="$PROJECT_DIR$/bbs-common/bbs-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbs-dao/bbs-dao.iml" filepath="$PROJECT_DIR$/bbs-dao/bbs-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbs-domain/bbs-domain.iml" filepath="$PROJECT_DIR$/bbs-domain/bbs-domain.iml" />
