@@ -28,6 +28,25 @@ public class IndexController extends BaseController {
 	@RequestMapping("/index")
 	public ModelAndView index(ModelAndView mv,HttpServletRequest request){
 	    mv.setViewName("/front/index");
+		System.out.println(10);
+		return mv;
+	}
+	@RequestMapping("/list")
+	public ModelAndView list(ModelAndView mv,HttpServletRequest request){
+		mv.setViewName("/front/list");
+		System.out.println(10);
+		return mv;
+	}
+	@RequestMapping("/content")
+	public ModelAndView content(ModelAndView mv,HttpServletRequest request){
+		mv.setViewName("/front/content");
+		System.out.println(10);
+		return mv;
+	}
+	@RequestMapping("/userlogin")
+	public ModelAndView userlogin(ModelAndView mv,HttpServletRequest request){
+		mv.setViewName("/front/userlogin");
+		System.out.println(10);
 		return mv;
 	}
 }
