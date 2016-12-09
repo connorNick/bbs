@@ -16,6 +16,8 @@
     <meta content="" name="author" />
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
     <jsp:include page="../common/header.jsp"/>
+    <jsp:include page="../common/editor.jsp"/>
+
     <%@include file="../common/taglib.jsp"%>
     <!-- ================== END BASE CSS STYLE ================== -->
 
@@ -65,7 +67,9 @@
                     </div>
                     <div class="panel-body">
 
-                        <form role="form" action="/sysdic/add" method="post" data-parsley-validate="true">
+
+
+                        <form role="form" action="/topic/add" method="post" data-parsley-validate="true">
                             <input type="hidden" class="form-control" name="id" value="${dictionary.id}">
 
                             <div class="form-group">
@@ -84,7 +88,8 @@
 
                             <div class="form-group">
                                 <label>内容</label>
-                                <input type="text" class="form-control input-lg" name="content" value="${dictionary.rmsValue}" placeholder="请输入值"  data-parsley-required="true" data-parsley-required-message="值不能为空">
+
+                                <textarea id="editor1" name="content" class="ckeditor">&nbsp;</textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary m-r-5 m-b-5">提交</button>
@@ -116,6 +121,23 @@
         App.init();
         Dashboard.init();
     });
+    SyntaxHighlighter.all();
+
+    function sub(){
+        var editor1 = CKEDITOR.instances.editor1.getData();//取得textarea的值
+        $("#editor1").val(editor1);
+        document.form.submit();
+    }
+    $(function () {
+        // var editor = CKEDITOR.replace("editor1", { "toolbar": "Basic" }); //显示编辑器
+        // CKFinder.setupCKEditor(editor, "ckfinder/"); //设置图片管理组件
+        //处理CKEDITOR的值 处理获取图片的地址
+        function CKupdate() {
+            for (instance in CKEDITOR.instances)
+                CKEDITOR.instances[instance].updateElement();
+        }
+    })
+
 </script>
 
 </body>

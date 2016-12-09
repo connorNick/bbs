@@ -74,13 +74,18 @@ public class TopicController extends BaseController {
 	 * 添加/编辑-字典
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String addUser(Dictionary d) {
-		if(d.getId() != null && d.getId() > 0){
+	public ModelAndView addUser(HttpServletRequest request,ModelAndView mv,Topic topic) {
+		/*if(topic.getId() != null && topic.getId() > 0){
 			//topicService.updateDictionary(d);
 		}else{
 			//topicService.addDictionary(d);
-		}
-		return "redirect:/topic/tolist";
+		}*/
+		request.setAttribute("topic",topic.getContent());
+		System.out.println(topic.getContent().toString());
+		mv.addObject("topic",topic.getContent());
+		mv.setViewName("topic/result");
+		return mv;
+		//return "redirect:/topic/tolist";
 	}
 
 	/**
