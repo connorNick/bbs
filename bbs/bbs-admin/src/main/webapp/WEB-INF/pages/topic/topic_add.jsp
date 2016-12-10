@@ -70,26 +70,26 @@
 
 
                         <form role="form" action="/topic/add" method="post" data-parsley-validate="true">
-                            <input type="hidden" class="form-control" name="id" value="${dictionary.id}">
+                            <input type="hidden" class="form-control" name="id" value="${topic.id}">
 
                             <div class="form-group">
                                 <label for="name">类型</label>
-                                <select id="categoryid">
-                                    <option value="1"></option>
-                                    <option value="2"></option>
-                                    <option value="3"></option>
+                                <select id="categoryId">
+                                    <c:forEach items="${list}" varStatus="i" var="item">
+                                        <option value="${item.rmsValue}">${item.rmsKey}</option>
+
+                                    </c:forEach>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label>主题</label>
-                                <input type="text" class="form-control input-lg" name="name" value="${dictionary.rmsKey}" placeholder="请输入键"  data-parsley-required="true" data-parsley-required-message="键不能为空">
+                                <input type="text" class="form-control input-lg" name="name" value="${topic.name}" placeholder="请输入键"  data-parsley-required="true" data-parsley-required-message="键不能为空">
                             </div>
 
                             <div class="form-group">
                                 <label>内容</label>
-
-                                <textarea id="editor1" name="content" class="ckeditor">&nbsp;</textarea>
+                                <textarea id="editor1" name="content" class="ckeditor">${topic.content}</textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary m-r-5 m-b-5">提交</button>
@@ -120,8 +120,9 @@
     $(document).ready(function() {
         App.init();
         Dashboard.init();
+        SyntaxHighlighter.all();
     });
-    SyntaxHighlighter.all();
+
 
     function sub(){
         var editor1 = CKEDITOR.instances.editor1.getData();//取得textarea的值

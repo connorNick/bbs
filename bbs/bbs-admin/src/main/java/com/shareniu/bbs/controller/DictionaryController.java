@@ -78,7 +78,7 @@ public class DictionaryController extends BaseController {
 		}else{
 			dictionaryService.addDictionary(d);
 		}
-		return "redirect:/sysconfig/tolist";
+		return "redirect:/sysdic/tolist";
 	}
 
 	/**

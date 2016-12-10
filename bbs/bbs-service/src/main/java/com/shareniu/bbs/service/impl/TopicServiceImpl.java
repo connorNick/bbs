@@ -20,4 +20,13 @@ public class TopicServiceImpl implements TopicService {
     public PageList<Topic> findTopicList(PageVo vo){
         return topicMapper.findTopicList(vo,vo.getPageable());
     }
+    public int updateTopic(Topic topic){
+        return topicMapper.updateByPrimaryKeySelective(topic);
+    }
+    public int addTopic(Topic topic){
+        return topicMapper.insert(topic);
+    }
+   public Topic getTopicById(Integer id){
+        return topicMapper.selectByPrimaryKey(id);
+    }
 }

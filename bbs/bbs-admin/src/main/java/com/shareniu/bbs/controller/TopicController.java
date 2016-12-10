@@ -3,6 +3,7 @@ package com.shareniu.bbs.controller;
 import com.shareniu.bbs.common.JsonResult;
 import com.shareniu.bbs.common.common.DataTable;
 import com.shareniu.bbs.common.common.PageVo;
+import com.shareniu.bbs.common.constants.DirctionaryEnum;
 import com.shareniu.bbs.domain.Dictionary;
 import com.shareniu.bbs.domain.Topic;
 import com.shareniu.bbs.interceptor.PageList;
@@ -12,13 +13,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 @RequestMapping("/topic")
@@ -28,7 +27,7 @@ public class TopicController extends BaseController {
 
 	@Autowired
 	private TopicService topicService;
-	
+
 	/**
 	 * 去往案件管理列表
 	 */
@@ -56,7 +55,21 @@ public class TopicController extends BaseController {
 	 */
 	@RequestMapping("/toadd")
 	public ModelAndView toAdd(ModelAndView mv){
+		List<Dictionary> list=getDictionaryListByTag(DirctionaryEnum.TOPIC_CATEGORY.name());
+		mv.addObject("list",list);
 		mv.setViewName("topic/topic_add");
+		return mv;
+	}
+
+	/**
+	 * 去往新增-字典
+	 */
+	@RequestMapping("/view")
+	public ModelAndView view(ModelAndView mv,@RequestParam("id")Integer id){
+		Topic topic=topicService.getTopicById(id);
+		mv.addObject("topic", topic);
+		System.out.println(topic.getContent());
+		mv.setViewName("topic/result");
 		return mv;
 	}
 
@@ -65,7 +78,9 @@ public class TopicController extends BaseController {
 	 */
 	@RequestMapping("/toedit/{id}")
 	public ModelAndView toEdit(@PathVariable Integer id, ModelAndView mv){
-		//mv.addObject("dictionary", topicService.getDictionaryById(id));
+		List<Dictionary> list=getDictionaryListByTag(DirctionaryEnum.TOPIC_CATEGORY.name());
+		mv.addObject("list",list);
+		mv.addObject("topic", topicService.getTopicById(id));
 		mv.setViewName("topic/topic_add");
 		return mv;
 	}
@@ -75,17 +90,15 @@ public class TopicController extends BaseController {
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public ModelAndView addUser(HttpServletRequest request,ModelAndView mv,Topic topic) {
-		/*if(topic.getId() != null && topic.getId() > 0){
-			//topicService.updateDictionary(d);
+		System.out.println(topic.getContent());
+		if(topic.getId() != null && topic.getId() > 0){
+			topicService.updateTopic(topic);
 		}else{
-			//topicService.addDictionary(d);
-		}*/
-		request.setAttribute("topic",topic.getContent());
-		System.out.println(topic.getContent().toString());
-		mv.addObject("topic",topic.getContent());
+			topicService.addTopic(topic);
+		}
+		mv.addObject("topic",topic);
 		mv.setViewName("topic/result");
 		return mv;
-		//return "redirect:/topic/tolist";
 	}
 
 	/**

@@ -27,7 +27,7 @@ SyntaxHighlighter.defaults['toolbar'] = false;
  </script>
   </head>
   <body>
-${topic}
+${topic.content}
 
   </body>
 </html>

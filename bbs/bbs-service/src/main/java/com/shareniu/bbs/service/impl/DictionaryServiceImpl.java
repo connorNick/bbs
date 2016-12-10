@@ -18,7 +18,7 @@ import static com.shareniu.bbs.common.util.JdbcUtil.isSuccess;
 
 
 /**
- * 鏁版嵁瀛楀吀
+ * 数据字典
  */
 @Service
 public class DictionaryServiceImpl implements IDictionaryService {
@@ -41,7 +41,8 @@ public class DictionaryServiceImpl implements IDictionaryService {
 
 	@Override
 	public boolean addDictionary(Dictionary d) {
-		ServiceValidate.isTrue(!org.springframework.util.StringUtils.isEmpty(d), "瀛楀吀瀵硅薄涓嶈兘涓虹┖");
+		ServiceValidate.isTrue(!org.springframework.util.StringUtils.isEmpty(d), "字典对象不能为空");
+		d.setCreateUser("1");
 		d.setCreateTime(new Date(System.currentTimeMillis()));
 		return dictionaryMapper.insertSelective(d)>0 ? true : false;
 	}
@@ -55,14 +56,14 @@ public class DictionaryServiceImpl implements IDictionaryService {
 
 	@Override
 	public boolean updateDictionary(Dictionary d) {
-		//濡傛灉id涓虹┖ 鎴栬?瀵硅薄涓虹┖
+		//如果id为空 或者对象为空
 		if (org.springframework.util.StringUtils.isEmpty(d) || org.springframework.util.StringUtils.isEmpty(d.getId())) {
-			ServiceValidate.isTrue(Boolean.FALSE, "瀛楀吀瀵硅薄涓嶈兘涓虹┖");
+			ServiceValidate.isTrue(Boolean.FALSE, "字典对象不能为空");
 		}
 		d.setUpdateTime(new Date(System.currentTimeMillis()));
 		int result = dictionaryMapper.updateByPrimaryKeySelective(d);
 		boolean state = isSuccess(result);
-		ServiceValidate.isTrue(state, "鏇存柊澶辫触");
+		ServiceValidate.isTrue(state, "更新失败");
 		return state;
 	}
 

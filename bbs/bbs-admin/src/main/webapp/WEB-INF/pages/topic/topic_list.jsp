@@ -16,7 +16,7 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
-    <jsp:include page="../common/header.jsp"></jsp:include>
+    <jsp:include page="../common/header.jsp"/>
     <%@include file="../common/taglib.jsp"%>
     <!-- ================== END BASE CSS STYLE ================== -->
 
@@ -74,18 +74,17 @@
 
                             <input type="text" class="form-control" id="gadname" placeholder="查询条件:类型/描述" style="position: relative;width: 200px;top: 22px;">
                             <button type="button" class="btn btn-primary" onclick="search()" style="position: relative;top:-13px;left:223px;">查询</button>
-    
-                            <table id="gadtable" class="table table-striped table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>主题</th>
-                                    <th>描述</th>
-                                    <th>创建人</th>
-                                    <th>创建时间</th>
-                                    <th>操作</th>
-                                </tr>
-                                </thead>                            
-                            </table>
+
+                                <table id="gadtable" class="table table-striped table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>标题</th>
+                                        <th>创建时间</th>
+                                        <th>创建人</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                </table>
                         </div>
                     </div>
                 </div>
@@ -185,22 +184,20 @@
                 }
             },
             "columns": [
-                { "data": "id" },
                 { "data": "name" },
-                { "data": "" },
-                { "data": "createUserId" },
                 { "data": "createTime" },
-
+                { "data": "createUserId" },
             ],
-           
+
             "columnDefs" : [ {
                 // 定义操作列,######以下是重点########
-                "targets" : 5,//是操作按钮目标列
+                "targets" : 3,//是操作按钮目标列
                 "data" : null,
                 "render" : function(data, type,row) {
                     var id = '"' + row.id + '"';
                     var html =  "<a href='javascript:void(0);' onclick='toedit("+ id + ")' class='btn-link'>编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;"
-                    html += "<a href='javascript:void(0);'   onclick='del("+ id + ")'  class='btn-link'>删除</a>"
+                    html += "<a href='javascript:void(0);'   onclick='del("+ id + ")'  class='btn-link'>删除</a>&nbsp;&nbsp;&nbsp;&nbsp;"
+                    html += "<a href='javascript:void(0);'   onclick='view("+ id + ")'  class='btn-link'>预览</a>"
                     return html;
                 }
             } ]
@@ -210,7 +207,10 @@
 
 
     function search(){
-        table.ajax.reload();
+        $(table).ajax.reload();
+    }
+    function view(id){
+    window.location.href = "/topic/view?id="+id;
     }
 
 </script>

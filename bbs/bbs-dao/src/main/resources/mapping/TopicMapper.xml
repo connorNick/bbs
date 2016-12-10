@@ -10,12 +10,13 @@
     <result column="count" jdbcType="INTEGER" property="count" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="content" jdbcType="LONGVARBINARY" property="content" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shareniu.bbs.domain.Topic">
     <result column="content" jdbcType="LONGVARBINARY" property="content" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, create_time, create_user_id, category_id, count, status, type
+    id, name, create_time, create_user_id, category_id, count, status, type,content
   </sql>
   <sql id="Blob_Column_List">
     content

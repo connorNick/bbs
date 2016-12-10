@@ -5,10 +5,13 @@ import com.shareniu.bbs.common.common.DataTable;
 import com.shareniu.bbs.common.common.PageVo;
 import com.shareniu.bbs.common.common.Pageable;
 import com.shareniu.bbs.common.exception.ServiceException;
+import com.shareniu.bbs.domain.Dictionary;
 import com.shareniu.bbs.interceptor.PageList;
+import com.shareniu.bbs.service.IDictionaryService;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.web.bind.WebDataBinder;
@@ -17,10 +20,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -31,6 +31,9 @@ public class BaseController {
 
     private static final Logger log = LoggerFactory.getLogger("BaseController");
 
+
+    @Autowired
+    private IDictionaryService iDictionaryService;
     /**
      * 表格数据加载请求：封裝表格(dataTable)的ajax请求參數
      *
@@ -71,6 +74,10 @@ public class BaseController {
         return vo;
     }
 
+    public List<Dictionary> getDictionaryListByTag(String tag){
+
+        return iDictionaryService.getDictionaryListByType(tag);
+    }
 
     /**
      * 处理请求返回结果：封装拉取的数据给表格(dataTable)以便渲染出内容
