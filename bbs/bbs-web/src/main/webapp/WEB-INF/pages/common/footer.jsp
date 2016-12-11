@@ -19,9 +19,9 @@
                     <ul>
                         <span class="t3" id="listtitle">联系我们</span>
                         <li><a href="#">联系电话：177-1029-0732 小丰老师 </a></li>
-                        <li><a href="#">小丰老师QQ：1967484968</a></li>
+                        <li><a href="#">小张老师QQ：550145191</a></li>
                         <li><a href="#">联系电话：153-2664-2397 水玲老师</a></li>
-                        <li><a href="#">水玲老师QQ：63398108</a></li>
+                        <li><a href="#">小正老师QQ：63398108</a></li>
                     </ul>
                 </div>
 

@@ -9,6 +9,8 @@ import com.shareniu.bbs.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by klaus on 9/27/16.
  */
@@ -28,5 +30,8 @@ public class TopicServiceImpl implements TopicService {
     }
    public Topic getTopicById(Integer id){
         return topicMapper.selectByPrimaryKey(id);
+    }
+    public List<Topic> getTopicList(){
+        return topicMapper.getTopicList();
     }
 }

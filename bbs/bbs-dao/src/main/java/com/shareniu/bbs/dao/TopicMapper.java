@@ -7,6 +7,8 @@ import com.shareniu.bbs.domain.Topic;
 import com.shareniu.bbs.interceptor.PageList;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 public interface TopicMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -23,4 +25,6 @@ public interface TopicMapper {
     int updateByPrimaryKey(Topic record);
 
     PageList<Topic> findTopicList(@Param("vo") PageVo vo, Pageable pageable);
+
+    List<Topic> getTopicList();
 }
