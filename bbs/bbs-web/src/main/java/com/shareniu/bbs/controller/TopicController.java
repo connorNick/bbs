@@ -35,7 +35,7 @@ public class TopicController extends BaseController {
 		mv.setViewName("/front/list");
 		return mv;
 	}
-	@RequestMapping("/content/{id}")
+	@RequestMapping("/content/{id}.htm")
 	public ModelAndView content(@PathVariable Integer id,ModelAndView mv,HttpServletRequest request){
 		Topic topic=topicService.getTopicById(id);
 		mv.addObject("topic",topic);

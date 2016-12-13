@@ -111,9 +111,9 @@
                             <a href="" title="新窗口打开" target="_blank"><img src="/frontstatic/images/folder_common.gif" /></a>
                           </td>
                           <th class="common" colspan="3">
-                            <a id="toux" href="/topic/content/${item.id}" target="_blank" title="" class=""><img src="/frontstatic/images/avatar_004.gif" /></a>
-                            <p><a href="/topic/content/${item.id}" onclick="" class="s xst">${item.name}</a></p>
-                            <p id="xinx"><cite><a href="/topic/content/${item.id}" class="xi2">回复：1</a> <span class="pipe">|</span></cite> </p>
+                            <a id="toux" href="/topic/content/${item.id}.htm" target="_blank" title="" class=""><img src="/frontstatic/images/avatar_004.gif" /></a>
+                            <p><a href="/topic/content/${item.id}.htm" onclick="" class="s xst">${item.name}</a></p>
+                            <p id="xinx"><cite><a href="/topic/content/${item.id}.htm" class="xi2">回复：1</a> <span class="pipe">|</span></cite> </p>
                           </th>
                           <td class="by"><em><span><fmt:formatDate value="${item.createTime}" pattern="yyyy-MM-dd"/> 发布</span></em></td>
                         </tr>
