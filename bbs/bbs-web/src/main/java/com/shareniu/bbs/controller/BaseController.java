@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import java.lang.reflect.Field;
@@ -41,39 +42,33 @@ public class BaseController {
      * 表格数据加载请求：封裝表格(dataTable)的ajax请求參數
      *
      */
-    public static PageVo parametToPageVo(HttpServletRequest request,Class sc) {
+    public static PageVo parametToPageVo(HttpServletRequest request) {
         PageVo vo = new PageVo();
 
         //获取私有屬性
-        Field[] fieldArray = sc.getDeclaredFields();
 
+        Enumeration names=request.getParameterNames();
         // 封装查询参数
         Map<String, Object> parameters = new HashMap<>(10);
-        for(Field field : fieldArray){
-            String filedName = field.getName();
-            String searchParameter = request.getParameter(filedName);
+        while(names.hasMoreElements()){
+            String filedName=(String)names.nextElement();
+            String searchParameter=request.getParameter(filedName);
             if(!StringUtils.isEmpty(searchParameter)){
-                log.info("查询参数=>filedName："+filedName+"--->"+"searchParameter:"+searchParameter);
                 parameters.put(filedName,searchParameter);
             }
         }
         vo.setParameters(parameters);
-
         // 封装分页参数
         Pageable pageable = new Pageable();
         String start = request.getParameter("start");
         String length = request.getParameter("length");
-        
-        //封装排序参数
-        String order = request.getParameter("order[0][column]");//排序的列号  
-        String orderDir = request.getParameter("order[0][dir]");//排序的顺序asc or desc  
-        String orderColumn = request.getParameter("columns["+order+"][data]");//排序的列
-        log.info("标题排序参数：排序的列号："+order+"；排序的顺序："+orderDir+";排序的列："+orderColumn);
-        Map<String, Object>  sortParameters=new HashMap<String, Object>();
-        sortParameters.put("orderColumn", orderColumn);
-        sortParameters.put("orderDir", orderDir);
-        vo.setSort(sortParameters);
-        
+        if(start==null){
+            start="0";
+        }
+        if(length==null){
+            length="10";
+        }
+        pageable.setPageSize(Integer.valueOf(length));
         pageable.setCurrentPage((Integer.parseInt(start)/Integer.parseInt(length)+1));
         log.info("分页参数=>第X页："+(Integer.parseInt(start)/Integer.parseInt(length)+1));
         vo.setPageable(pageable);

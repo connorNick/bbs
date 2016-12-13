@@ -76,8 +76,8 @@ public class TopicController extends BaseController {
 	/**
 	 * 去往编辑-字典
 	 */
-	@RequestMapping("/toedit/{id}")
-	public ModelAndView toEdit(@PathVariable Integer id, ModelAndView mv){
+	@RequestMapping("/toedit")
+	public ModelAndView toEdit(@RequestParam("id")Integer id, ModelAndView mv){
 		List<Dictionary> list=getDictionaryListByTag(DirctionaryEnum.TOPIC_CATEGORY.name());
 		mv.addObject("list",list);
 		mv.addObject("topic", topicService.getTopicById(id));

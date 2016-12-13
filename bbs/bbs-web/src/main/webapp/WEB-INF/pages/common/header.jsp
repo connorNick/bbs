@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div id="append_parent">
     <div id="qmenu_menu" class="p_pop blk" style="display: none;">
-        <div class="ptm pbw hm">请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br>没有帐号？
-            <a href="" class="xi2 xw1">立即注册</a>
+        <div class="ptm pbw hm"><%--请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br>没有帐号？--%>
+            <%--<a href="" class="xi2 xw1">立即注册</a>--%>
         </div>
     </div>
 
@@ -16,11 +16,11 @@
                 </div>
                 <div class="y">
                     <div class="z"></div>
-                    <a href="" onclick="showWindow('login', this.href);return false;" title="登录">登录</a>
+                   <%-- <a href="" onclick="showWindow('login', this.href);return false;" title="登录">登录</a>--%>
                     <span class="wi_tpipe">|</span>
-                    <a href="" title="立即注册">立即注册</a>
+                   <%-- <a href="" title="立即注册">立即注册</a>--%>
                     <span class="wi_tpipe">|</span>
-                    <a href="javascript:;" onclick="showWindow('login', '')" title="找回密码">找回密码</a>
+                   <%-- <a href="javascript:;" onclick="showWindow('login', '')" title="找回密码">找回密码</a>--%>
                 </div>
             </div>
         </div>
@@ -63,8 +63,8 @@
             <div style="" id="wi_wrap">
                 <div id="nv">
                     <ul>
-                        <li class="xnv_1" id="mn_N25a2"><a href="" hidefocus="true" title="分享牛">分享牛<span>分享牛</span></a></li>
-                        <li class="xnv_2 a xnv_a2" id="mn_forum"><a href="" hidefocus="true" title="BBS">牛人地带<span>BBS</span></a></li>
+                        <li class="xnv_1" id="mn_N25a2"><a href="/index" hidefocus="true" title="分享牛">分享牛<span>分享牛</span></a></li>
+                        <li class="xnv_2 a xnv_a2" id="mn_forum"><a href="/topic/list" hidefocus="true" title="BBS">牛人地带<span>BBS</span></a></li>
                     </ul>
                     <script src="js/nv.js" type="text/javascript"></script>
                 </div>

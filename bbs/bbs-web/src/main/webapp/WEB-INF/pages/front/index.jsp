@@ -52,9 +52,9 @@
                                                 <a href="/topic/list"><img src="/frontstatic/images/common_62_icon.png" alt="" align="left"></a></div>
                                             <dl style="margin-left: 758px;">
                                                 <dt><a href="/topic/list">Activiti</a></dt>
-                                                <dd><em><i>主题: </i>4</em>, <em><i>帖数: </i>4</em></dd><dd class="zyzy">
+                                                <%--<dd><em><i>主题: </i>4</em>, <em><i>帖数: </i>4</em></dd><dd class="zyzy">
                                                 <a href="">最后发表: 2016-6-23 11:46</a>
-                                            </dd>
+                                            </dd>--%>
                                             </dl>
                                         </td>
                                         <td width="19.9%">&nbsp;</td><td width="19.9%">&nbsp;</td><td width="19.9%">&nbsp;</td></tr>
