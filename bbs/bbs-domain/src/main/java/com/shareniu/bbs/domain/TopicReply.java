@@ -5,7 +5,7 @@ import java.util.Date;
 public class TopicReply {
     private Integer id;
 
-    private String count;
+    private String content;
 
     private Integer userId;
 
@@ -15,20 +15,14 @@ public class TopicReply {
 
     private Integer parentRepayId;
 
+    private String ip;
+
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getCount() {
-        return count;
-    }
-
-    public void setCount(String count) {
-        this.count = count == null ? null : count.trim();
     }
 
     public Integer getUserId() {
@@ -61,5 +55,21 @@ public class TopicReply {
 
     public void setParentRepayId(Integer parentRepayId) {
         this.parentRepayId = parentRepayId;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 }

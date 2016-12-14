@@ -102,7 +102,7 @@
 
                 <div id="forumnew" style="display:none"></div>
                 <form method="post" autocomplete="off" name="moderate" id="moderate" action="">
-                  <table summary="forum_70" id="threadlisttableid" cellpadding="0" cellspacing="0">
+                  <table summary="forum_70" id="threadlisttableid" cellpadding="0" cellspacing="0" border="0">
 
                     <c:forEach items="${list}" varStatus="i" var="item">
                         <tbody>
@@ -110,11 +110,11 @@
                           <td class="icn">
                             <a href="" title="新窗口打开" target="_blank"><img src="/frontstatic/images/folder_common.gif" /></a>
                           </td>
-                          <th class="common" colspan="3">
+                          <th class="common">
                             <a id="toux" href="/topic/content/${item.id}.htm" target="_blank" title="" class=""><img src="/frontstatic/images/avatar_004.gif" /></a>
-                            <p><a href="/topic/content/${item.id}.htm" onclick="" class="s xst">${item.name}</a></p>
-                            <p id="xinx"><cite><a href="/topic/content/${item.id}.htm" class="xi2">回复：1</a> <span class="pipe">|</span></cite> </p>
+                            <p id="xinx"><cite><a href="/topic/content/${item.id}.htm" class="xi2">回复:${item.count}</a> <span class="pipe">|</span></cite> </p>
                           </th>
+                          <th align="left" colspan="4"><p><a href="/topic/content/${item.id}.htm" onclick="" class="s xst">${item.name}</a></p></th>
                           <td class="by"><em><span><fmt:formatDate value="${item.createTime}" pattern="yyyy-MM-dd"/> 发布</span></em></td>
                         </tr>
                         </tbody>
@@ -257,11 +257,10 @@
 <script type="text/javascript" src="/frontstatic/paging/js/query.js"></script>
 <script type="text/javascript" src="/frontstatic/paging/js/paging.js"></script>
 <script>
-  $('#pageTool').Paging({pagesize:10,count:${total/10},current:${vo.pageable.currentPage},callback:function(page,size,count){
+  $('#pageTool').Paging({pagesize:10,count:${total},current:${vo.pageable.currentPage},callback:function(page,size,count){
    // alert('当前第 ' +page +'页,每页 '+size+'条,总页数：'+count+'页');
-     window.location.href="/topic/list?start="+(page*size-1)+"&length="+size;
+     window.location.href="/content/${topic.id}.htm?start="+((page-1)*size)+"&length="+size;
   }});
-  //$('#pageToolbar').Paging({pagesize:10,count:85,toolbar:true});
 </script>
 </body>
 </html>

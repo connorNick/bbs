@@ -19,6 +19,7 @@
     <%@include file="../common/taglib.jsp"%>
     <link rel="stylesheet" type="text/css" href="/frontstatic/css/style_2_common.css">
     <link rel="stylesheet" type="text/css" href="/frontstatic/css/style_2_forum_viewthread.css">
+    <link rel="stylesheet" type="text/css" href="/frontstatic/paging/css/paging.css">
     <!-- ================== END BASE CSS STYLE ================== -->
 </head>
 <jsp:include page="../common/header.jsp"/>
@@ -207,26 +208,30 @@
                     </div>
 
                     </td></tr>
-                <%--<tr><td class="plc plm">--%>
-                    <%--<div id="p_btn" class="mtw mbm hm cl">
+                <tr><td class="plc plm">
+                    <div id="p_btn" class="mtw mbm hm cl">
 
                         <a href="" id="k_favorite" onclick="" onmouseover="this.title = $('favoritenumber').innerHTML + ' 人收藏'" title="收藏本帖"><i>
                             <img src="/frontstatic/images/fav.gif" alt="收藏">收藏<span id="favoritenumber" style="display:none">0</span></i></a>
-                    </div>--%>
-                    <%--<div class="mtw mbw">
-                        <h3 class="pbm mbm bbda">相关帖子</h3>
-                        <ul class="xl xl2 cl"><li>• <a href="http://bbs.superwu.cn/forum.php?mod=viewthread&amp;tid=949" title="超人学院第九期大数据高薪就业班招生了" target="_blank">超人学院第九期大数据高薪就业班招生了</a></li>
-                            <li>• <a href="" title="超人学院年薪过50W的学员获得超人学院奖励" target="_blank">超人学院年薪过50W的学员获得超人学院奖励</a></li>
-                            <li>• <a href="" title="超人学院平均就业薪资新鲜出炉" target="_blank">超人学院平均就业薪资新鲜出炉</a></li>
-                            <li>• <a href="" title="超人学院第七期就业学员展示" target="_blank">超人学院第七期就业学员展示</a></li>
-                            <li>• <a href="" title="超人学院就业捷报" target="_blank">超人学院就业捷报</a></li>
-                            <li>• <a href="" title="超人学院第十期火爆招生中" target="_blank">超人学院第十期火爆招生中</a></li>
-                            <li>• <a href="" title="超人学院携手中关村大数据产业联盟" target="_blank">超人学院携手中关村大数据产业联盟</a></li>
-                            <li>• <a href="" title="超人学院面授精英班第四期" target="_blank">超人学院面授精英班第四期</a></li>
-                            <li>• <a href="" title="首届超人杯博客分享大赛圆满结束了" target="_blank">首届超人杯博客分享大赛圆满结束了</a></li>
-                            <li>• <a href="" title="超人学院免费公开课重磅来袭！！" target="_blank">超人学院免费公开课重磅来袭！！</a></li>
-                        </ul>
-                    </div>--%>
+                    </div>
+                    <div class="mtw mbw">
+                            <table border="0" >
+                                <c:forEach items="${trlist}" varStatus="vs" var="item" >
+                                 <tr>
+                                     <td bgcolor="#7fffd4" colspan="2">${vs.count} 楼# 匿名--<fmt:formatDate value="${item.createTime}" pattern="yyyy-MM-dd"/></td>
+                                 </tr>
+                                <tr>
+                                    <td colspan="2" height="50px">${item.content}</td>
+                                </tr>
+                                </c:forEach>
+                                <tr text-align="right">
+                                    <td></td>
+                                    <td text-align="right">
+                                        <div id="pageTool"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                    </div>
                <%-- </td>
                 </tr>--%>
                <%-- <tr id="_postposition4714"></tr>--%>
@@ -257,7 +262,7 @@
 
 
             <div class="pgs mtm mbm cl" id="pgtb">
-                <span class="pgb y" id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})">
+                <span class="pgb y" id="visitedforumstmp">
                     <a href="/topic/list">返回列表</a>
                 </span>
                 <div class="fatie"><%--<a id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&amp;action=newthread&amp;fid=92')" href="javascript:;" title="发新帖">发新帖</a>--%></div>
@@ -265,50 +270,24 @@
 
 
             <div id="f_pst" class="pl bm bmw">
-                <form method="post" autocomplete="off" id="fastpostform" action="" onsubmit="return fastpostvalidate(this)">
+                <form method="post"  id="repayFrom" action="/topicreply/add.htm">
+                    <input type="hidden" name="topicId" value="${topic.id}"/>
+                    <input type="hidden" name="parentRepayId" value="0"/>
+                    <input type="hidden" name="userId" value="0"/>
                     <table cellpadding="0" cellspacing="0">
                         <tbody><tr>
                             <td class="pls">
                             </td>
                             <td class="plc">
-
-                                <span id="fastpostreturn"></span>
-
-
+                                <span id="fastpostreturn">评论</span>
                                 <div class="cl">
-                                    <div id="fastsmiliesdiv" class="y"><div id="fastsmiliesdiv_data"><div id="fastsmilies"></div></div></div><div class="hasfsl" id="fastposteditor">
-                                    <div class="tedt mtn">
-                                        <div class="bar">
-                                            <span class="y">
-                                            <a href="" onclick="return switchAdvanceMode(this.href)">高级模式</a>
-                                            </span><script src="/frontstatic/images/seditor.js" type="text/javascript"></script>
-                                            <div class="fpd">
-                                                <a href="javascript:;" title="文字加粗" class="fbld">B</a>
-                                                <a href="javascript:;" title="设置文字颜色" class="fclr" id="fastpostforecolor">Color</a>
-                                                <a id="fastpostimg" href="javascript:;" title="图片" class="fmg">Image</a>
-                                                <a id="fastposturl" href="javascript:;" title="添加链接" class="flnk">Link</a>
-                                                <a id="fastpostquote" href="javascript:;" title="引用" class="fqt">Quote</a>
-                                                <a id="fastpostcode" href="javascript:;" title="代码" class="fcd">Code</a>
-                                                <a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
-                                            </div></div>
-                                        <div class="area">
-                                           <%-- <div class="pt hm">
-                                                您需要登录后才可以回帖 <a href="" onclick="showWindow('login', this.href)" class="xi2">登录</a> |
-                                                <a href="" class="xi2">立即注册</a>
-                                            </div>--%>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <div class="hasfsl" id="fastposteditor">
+                                            <textarea cols="100" rows="5" name="content"></textarea>
+                                            <input type="submit" name="提交"/>
                                 </div>
                                 <div id="seccheck_fastpost">
                                 </div>
-
-
                                 <p class="ptm pnpost">
-                               <%--     <a href="" class="y" target="_blank">本版积分规则</a>
-                                    <button type="button" onclick="" onmouseover="" name="replysubmit" id="fastpostsubmit" class="pn pnc vm" value="replysubmit" tabindex="5"><strong>发表回复</strong></button>
-                                    <label for="fastpostrefresh"><input id="fastpostrefresh" class="pc" type="checkbox">回帖后跳转到最后一页</label>
-                                    <script type="text/javascript">if(getcookie('fastpostrefresh') == 1) {$('fastpostrefresh').checked=true;}</script>--%>
                                 </p>
                             </td>
                         </tr>
@@ -334,6 +313,15 @@
     </div>
 
 </div>
+<script type="text/javascript" src="/frontstatic/paging/js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="/frontstatic/paging/js/query.js"></script>
+<script type="text/javascript" src="/frontstatic/paging/js/paging.js"></script>
+<script>
+    $('#pageTool').Paging({pagesize:10,count:${total},current:${vo.pageable.currentPage},callback:function(page,size,count){
+       // alert('当前第 ' +page +'页,每页 '+size+'条,总页数：'+count+'页');
+        window.location.href="/topic/content/${topic.id}.htm?start="+((page-1)*size)+"&length="+size;
+    }});
+</script>
 <jsp:include page="../common/footer.jsp"/>
 </body>
 </html>

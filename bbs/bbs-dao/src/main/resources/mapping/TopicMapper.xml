@@ -176,4 +176,11 @@
       and type =#{vo.parameters.type}
     </if>
   </select>
+
+  <update id="updateCountAddById">
+    update topic
+    set
+       count = count+1
+    where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>

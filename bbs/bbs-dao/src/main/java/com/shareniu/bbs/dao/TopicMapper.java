@@ -27,4 +27,6 @@ public interface TopicMapper {
     PageList<Topic> findTopicList(@Param("vo") PageVo vo, Pageable pageable);
 
     List<Topic> getTopicList();
+
+    int updateCountAddById(Integer id);
 }

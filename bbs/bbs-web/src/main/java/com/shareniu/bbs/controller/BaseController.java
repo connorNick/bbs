@@ -5,10 +5,13 @@ import com.shareniu.bbs.common.common.DataTable;
 import com.shareniu.bbs.common.common.PageVo;
 import com.shareniu.bbs.common.common.Pageable;
 import com.shareniu.bbs.common.exception.ServiceException;
+import com.shareniu.bbs.domain.SysUser;
 import com.shareniu.bbs.interceptor.PageList;
 import com.shareniu.bbs.service.UserService;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -128,6 +131,11 @@ public class BaseController {
         return JsonResult.createErrorMsg(ex.getMessage());
     }
 
+    public SysUser getUser(){
+        Subject subject = SecurityUtils.getSubject();
+        SysUser user=(SysUser)subject.getPrincipal();
+       return user;
+    }
     public static JsonResult returnSuccess(String msg) {
         return JsonResult.createSuccess(msg);
     }

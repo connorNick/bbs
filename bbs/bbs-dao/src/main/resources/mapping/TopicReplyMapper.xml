@@ -3,14 +3,15 @@
 <mapper namespace="com.shareniu.bbs.dao.TopicReplyMapper">
   <resultMap id="BaseResultMap" type="com.shareniu.bbs.domain.TopicReply">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="count" jdbcType="VARCHAR" property="count" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="topic_id" jdbcType="INTEGER" property="topicId" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="parent_repay_id" jdbcType="INTEGER" property="parentRepayId" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, count, user_id, topic_id, create_time, parent_repay_id
+    id, content, user_id, topic_id, create_time, parent_repay_id,ip
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -23,10 +24,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.shareniu.bbs.domain.TopicReply">
-    insert into topic_reply (id, count, user_id, 
+    insert into topic_reply (id, content,ip, user_id,
       topic_id, create_time, parent_repay_id
       )
-    values (#{id,jdbcType=INTEGER}, #{count,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER},
       #{topicId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{parentRepayId,jdbcType=INTEGER}
       )
   </insert>
@@ -36,8 +37,11 @@
       <if test="id != null">
         id,
       </if>
-      <if test="count != null">
-        count,
+      <if test="content != null">
+        content,
+      </if>
+      <if test="ip != null">
+        ip,
       </if>
       <if test="userId != null">
         user_id,
@@ -56,8 +60,11 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="count != null">
-        #{count,jdbcType=VARCHAR},
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
       </if>
       <if test="userId != null">
         #{userId,jdbcType=INTEGER},
@@ -76,8 +83,11 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.shareniu.bbs.domain.TopicReply">
     update topic_reply
     <set>
-      <if test="count != null">
-        count = #{count,jdbcType=VARCHAR},
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        content = #{ip,jdbcType=VARCHAR},
       </if>
       <if test="userId != null">
         user_id = #{userId,jdbcType=INTEGER},
@@ -96,11 +106,20 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.shareniu.bbs.domain.TopicReply">
     update topic_reply
-    set count = #{count,jdbcType=VARCHAR},
+    set content = #{content,jdbcType=VARCHAR},
+    ip = #{ip,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=INTEGER},
       topic_id = #{topicId,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       parent_repay_id = #{parentRepayId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="findTopicReplyList" parameterType="com.shareniu.bbs.common.common.PageVo" resultMap="BaseResultMap">
+    SELECT <include refid="Base_Column_List"/>
+    FROM topic_reply where 1=1
+    <if test="vo.parameters.topicId!=null">
+      and topic_id =#{vo.parameters.topicId}
+    </if>
+  </select>
 </mapper>

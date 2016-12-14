@@ -2,7 +2,9 @@ package com.shareniu.bbs.controller;
 
 import com.shareniu.bbs.common.common.PageVo;
 import com.shareniu.bbs.domain.Topic;
+import com.shareniu.bbs.domain.TopicReply;
 import com.shareniu.bbs.interceptor.PageList;
+import com.shareniu.bbs.service.TopicReplyService;
 import com.shareniu.bbs.service.TopicService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,22 +26,31 @@ public class TopicController extends BaseController {
 
 	@Autowired
 	private TopicService topicService;
+
+	@Autowired
+	private TopicReplyService topicReplyService;
 	@RequestMapping("/list")
 	public ModelAndView list(ModelAndView mv,HttpServletRequest request){
 		PageVo vo =  parametToPageVo(request);
 		PageList<Topic> list = topicService.findTopicList(vo);
 		mv.addObject("list",list);
 		mv.addObject("vo",vo);
-		mv.addObject("size",list.size());
 		mv.addObject("total",list.getTotalCount());
 		mv.setViewName("/front/list");
 		return mv;
 	}
 	@RequestMapping("/content/{id}.htm")
 	public ModelAndView content(@PathVariable Integer id,ModelAndView mv,HttpServletRequest request){
+		PageVo vo =  parametToPageVo(request);
+		vo.getParameters().put("topicId",id);
+		PageList<TopicReply> trlist=topicReplyService.findTopicReplyList(vo);
 		Topic topic=topicService.getTopicById(id);
 		mv.addObject("topic",topic);
+		mv.addObject("trlist",trlist);
+		mv.addObject("vo",vo);
+		mv.addObject("total",trlist.getTotalCount());
 		mv.setViewName("/front/content");
 		return mv;
 	}
+
 }
