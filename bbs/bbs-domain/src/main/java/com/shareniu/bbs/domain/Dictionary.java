@@ -23,6 +23,8 @@ public class Dictionary {
 
     private Byte delFlag;
 
+    private String imgUrl;
+
     public Integer getId() {
         return id;
     }
@@ -101,5 +103,13 @@ public class Dictionary {
 
     public void setDelFlag(Byte delFlag) {
         this.delFlag = delFlag;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }

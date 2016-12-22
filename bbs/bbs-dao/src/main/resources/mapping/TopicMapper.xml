@@ -36,6 +36,13 @@
     from topic
   </select>
 
+
+  <select id="getTopFiveTopicList" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    from topic order by count desc limit 0,5
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from topic
     where id = #{id,jdbcType=INTEGER}
@@ -169,8 +176,8 @@
   <select id="findTopicList" parameterType="com.shareniu.bbs.common.common.PageVo" resultMap="BaseResultMap">
     SELECT <include refid="Base_Column_List"/>
     FROM topic where 1=1
-    <if test="vo.parameters.category_id!=null">
-      and category_id =#{vo.parameters.category_id}
+    <if test="vo.parameters.categoryId!=null">
+      and category_id =#{vo.parameters.categoryId}
     </if>
     <if test="vo.parameters.type!=null">
       and type =#{vo.parameters.type}

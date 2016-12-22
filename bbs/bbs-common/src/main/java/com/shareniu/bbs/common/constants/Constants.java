@@ -129,4 +129,5 @@ public class Constants
     public final static String PRE_SALE = "110000";
 
     public final static long PIC_MAX_SIZE =2048;
+
 }

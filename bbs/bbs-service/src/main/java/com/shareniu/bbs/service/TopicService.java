@@ -15,4 +15,5 @@ public interface TopicService {
     Topic getTopicById(Integer id);
 
     List<Topic> getTopicList();
+    List<Topic> getTopFiveTopicList();
 }

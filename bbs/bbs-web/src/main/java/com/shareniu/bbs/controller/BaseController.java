@@ -6,6 +6,7 @@ import com.shareniu.bbs.common.common.PageVo;
 import com.shareniu.bbs.common.common.Pageable;
 import com.shareniu.bbs.common.exception.ServiceException;
 import com.shareniu.bbs.domain.SysUser;
+import com.shareniu.bbs.domain.User;
 import com.shareniu.bbs.interceptor.PageList;
 import com.shareniu.bbs.service.UserService;
 
@@ -131,11 +132,50 @@ public class BaseController {
         return JsonResult.createErrorMsg(ex.getMessage());
     }
 
-    public SysUser getUser(){
-        Subject subject = SecurityUtils.getSubject();
-        SysUser user=(SysUser)subject.getPrincipal();
-       return user;
+    /**
+     * 获取当前登录用户的信息
+     *
+     * @return 当前账户信息
+     */
+    public User getUser() {
+        User user = null;
+        if (isAuthenticated()) {
+            Object obj = SecurityUtils.getSubject().getPrincipal();
+            if (obj != null) {
+                user = (User) obj;
+            }
+        }
+        return user;
     }
+    /**
+     * 是否已认证
+     *
+     * @return boolean
+     */
+    public boolean isAuthenticated() {
+        return SecurityUtils.getSubject().isAuthenticated();
+    }
+    /**
+     * 获取用户IP
+     *
+     * @author liuqian
+     * @param request
+     * @return
+     */
+    public String getIpAddr(HttpServletRequest request) {
+        String ip = request.getHeader("x-forwarded-for");
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        return ip;
+    }
+
     public static JsonResult returnSuccess(String msg) {
         return JsonResult.createSuccess(msg);
     }

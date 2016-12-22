@@ -29,7 +29,17 @@ public final class StringUtil {
             "0123456789",
             "`~!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?"
     };
+    public static String valueOf(Object obj) {
+        return obj != null?obj.toString():"";
+    }
 
+    public static boolean isEmpty(Object str) {
+        return str == null || valueOf(str).length() == 0;
+    }
+
+    public static boolean isNotEmpty(Object str) {
+        return !isEmpty(str);
+    }
     public static boolean checkPasswdStrong(String passwd, int minLength) {
         if (null == passwd || "".equals(passwd))
             return false;

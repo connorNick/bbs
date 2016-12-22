@@ -1,266 +1,271 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="zh" class="ie8"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="zh">
-<!--<![endif]-->
-<%
-  String path = request.getContextPath();
-  String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
-%>
+<!-- html svn version:1995 -->
+<html>
 <head>
-  <meta charset="utf-8" />
-  <title>主页面</title>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-  <meta content="" name="description" />
-  <meta content="" name="author" />
-  <!-- ================== BEGIN BASE CSS STYLE ================== -->
-<%--
-    <jsp:include page="../common/header_style.jsp"/>
---%>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>讨论区_百度阿里腾讯谷歌小米笔试面试分享_牛客网</title>
 
-  <link href="/frontstatic/css/all.css" rel="stylesheet" />
-  <link href="/frontstatic/css/style.css" rel="stylesheet" />
-  <link href="/frontstatic/css/style_2_common.css" rel="stylesheet" />
-
-  <link href="/frontstatic/css/style_2_forum_forumdisplay.css" rel="stylesheet" />
-  <link href="/frontstatic/css/style_2_forum_viewthread.css" rel="stylesheet" />
-  <link href="/frontstatic/css/index.css" rel="stylesheet" />
-  <link href="/frontstatic/css/main.css" rel="stylesheet" />
-  <link href="/frontstatic/css/cssreset.css" rel="stylesheet" />
-  <link href="/frontstatic/css/fix.css" rel="stylesheet" />
-  <link href="/frontstatic/css/float.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="/frontstatic/paging/css/paging.css">
-  <%@include file="../common/taglib.jsp"%>
-  <style type="text/css">
-     </style>
-  <!-- ================== END BASE CSS STYLE ================== -->
-</head>
-<jsp:include page="../common/header.jsp"/>
-<body id="nv_forum" class="pg_forumdisplay" onkeydown="if(event.keyCode==27) return false;">
-
-<div class="bottombg">
-  <!-- topnav -->
-
-  <div id="wist_menu" class="wi_pop" style="display: none;">
-    <ul class="wi_skin cl"></ul>
-  </div><!-- /topnav -->
-
-  <div id="wp" class="wp">
-    <div id="diynavtop" class="area"></div><!--[/diy]-->
-
-    <div class="boardnav">
-
-        <div id="ct" class="wp cl ct2">
-        <div class="mn">
-          <div class="orde">
-            <div class="bm bml pbn">
-              <div class="bm_h cl">
-                <%--<h1 class="xs2"><a href="">Hadoop</a>
-                    <span class="xs1 xw0 i">今日: <strong class="xi1">0</strong><span class="pipe">|</span>主题:
-                    <strong class="xi1">242</strong><span class="pipe">|</span>排名:
-                    <strong class="xi1" title="上次排名:40">40</strong><b class="ico_increase"></b></span></h1>--%>
-              </div>
-            </div>
-
-            <div class="drag">
-              <!--[diy=diy4]-->
-
-              <div id="diy4" class="area"></div><!--[/diy]-->
-            </div>
-          </div>
-
-          <div class="cenbor">
-            <div id="pgt" class="bm bw0 pgs cl">
-              <span id="fd_page_top"></span>
-                <%--<span class="pgb y"><a href="">返回</a></span> <a href="javascript:;" id="newspecial"  onmouseover="" onclick="" title="发新帖">发布新帖</a>--%>
-            </div>
-
-            <div id="threadlist" class="tl bm bmw">
-              <div class="th">
-                <table cellpadding="0" cellspacing="0">
-                  <tbody>
-                  <tr>
-                    <th colspan="2">
-                      <div class="tf">
-                        <span id="atarget" onclick="setatarget(1)" class="y" title="在新窗口中打开帖子">新窗</span>
-                        <a id="filter_special" href="javascript:;" class="showmenu xi2 a2" onclick=
-                                "showMenu(this.id)">主题</a>
-                      </div>
-                    </th>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="bm_c">
-                <script type="text/javascript">
-                  //<![CDATA[
-                  var lasttime = 1480765658;var listcolspan= '5';
-                  //]]>
-                </script>
-
-                <div id="forumnew" style="display:none"></div>
-                <form method="post" autocomplete="off" name="moderate" id="moderate" action="">
-                  <table summary="forum_70" id="threadlisttableid" cellpadding="0" cellspacing="0" border="0">
-
-                    <c:forEach items="${list}" varStatus="i" var="item">
-                        <tbody>
-                        <tr>
-                          <td class="icn">
-                            <a href="" title="新窗口打开" target="_blank"><img src="/frontstatic/images/folder_common.gif" /></a>
-                          </td>
-                          <th class="common">
-                            <a id="toux" href="/topic/content/${item.id}.htm" target="_blank" title="" class=""><img src="/frontstatic/images/avatar_004.gif" /></a>
-                            <p id="xinx"><cite><a href="/topic/content/${item.id}.htm" class="xi2">回复:${item.count}</a> <span class="pipe">|</span></cite> </p>
-                          </th>
-                          <th align="left" colspan="4"><p><a href="/topic/content/${item.id}.htm" onclick="" class="s xst">${item.name}</a></p></th>
-                          <td class="by"><em><span><fmt:formatDate value="${item.createTime}" pattern="yyyy-MM-dd"/> 发布</span></em></td>
-                        </tr>
-                        </tbody>
-                    </c:forEach>
-                  </table>
-
-                  <!-- end of table "forum_G[fid]" branch 1/3 -->
-                </form>
-              </div>
-             <div class="bm bw0 pgs cl" id="pgda">
-               <div id="pageTool"></div>
-              </div>
-            </div>
-
-            <div id="filter_special_menu" class="p_pop" style="display:none" >
-              <ul>
-                <li>
-                  <a href="">全部主题</a>
-                </li>
-                <li>
-                  <a href="">投票</a>
-                </li>
-              </ul>
-            </div>
-
-            <div id="filter_reward_menu" class="p_pop" style="display:none" change="">
-              <ul>
-                <li>
-                  <a href="">全部悬赏</a>
-                </li>
-                <li>
-                  <a href="">
-                    进行中</a>
-                </li>
-              </ul>
-            </div>
-
-
-            <!--[diy=diyfastposttop]-->
-
-            <div id="diyfastposttop" class="area"></div><!--[/diy]-->
-            <!--[diy=diyforumdisplaybottom]-->
-
-            <div id="diyforumdisplaybottom" class="area"></div><!--[/diy]-->
-          </div>
-
-          <div id="f_pst" class="bm">
-            <div class="bm_h">
-              <h2>快速发帖</h2>
-            </div>
-
-            <div class="bm_c">
-              <form method="post" autocomplete="off" id="fastpostform" action="" onsubmit="return fastpostvalidate(this)">
-                <div id="fastpostreturn" style="margin:-5px 0 5px"></div>
-                <div class="pbt cl">
-                  <input id="subject" name="subject" class="px" onkeyup="" tabindex="11" style="width: 25em" type="text" />
-                    <span>还可输入 <strong id="checklen">80</strong> 个字符</span>
-                </div>
-                <div class="cl">
-                  <div id="fastsmiliesdiv" class="y">
-                    <div id="fastsmiliesdiv_data">
-                      <div id="fastsmilies"></div>
-                    </div>
-                  </div>
-
-                  <div class="hasfsl" id="fastposteditor">
-                    <div class="tedt">
-                      <div class="bar">
-                          <span class="y"><a href=""
-                                             onclick="switchAdvanceMode(this.href);doane(event);">高级模式</a></span>
-                        <div class="fpd">
-                          <a href="javascript:;" title="文字加粗" class="fbld">B</a>
-                            <a href="javascript:;" title="设置文字颜色" class="fclr" id="fastpostforecolor">Color</a>
-                            <a id="fastpostimg" href="javascript:;" title="图片" class="fmg">Image</a>
-                            <a id="fastposturl" href="javascript:;" title="添加链接" class="flnk">Link</a>
-                            <a id="fastpostquote" href="javascript:;" title="引用" class="fqt">Quote</a>
-                            <a id="fastpostcode" href="javascript:;" title="代码" class="fcd">Code</a>
-                            <a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
-                        </div>
-                      </div>
-
-                      <div class="area">
-                        <div class="pt hm">
-                          <%--您需要登录后才可以发帖 <a href="" onclick="" class="xi2">登录</a> |
-                          <a href="" class="xi2">立即注册</a>--%>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div id="seccheck_fastpost"></div><input name="formhash" value="755d8bc8" type="hidden" />
-                    <input name="usesig"  value="" type="hidden" />
-                </div>
-
-                <p class="ptm pnpost"><%--<a href="" class="y" target="_blank">本版积分规则</a>--%>
-                   <%-- <button type="submit" onmouseover="" name="topicsubmit" id="fastpostsubmit" value="topicsubmit" tabindex="13" class="pn pnc">
-                        <strong>发表帖子</strong></button>--%></p>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <div class="sd">
-          <div class="bm">
-            <div class="bm_h">
-              <h2>所属分类: 互动问答</h2>
-            </div>
-
-            <div class="bm_c">
-              <ul class="xl xl2 cl">
-                <%--<li>
-                  <a href="">Hadoop</a>
-                </li>
-                <li>
-                  <a href="">sqoop</a>
-                </li>
-                <li>
-                  <a href="">elasticsearch</a>
-                </li>
-                <li>
-                  <a href="">Python</a>
-                </li>--%>
-              </ul>
-            </div>
-          </div>
-
-
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-    <jsp:include page="../common/footer.jsp"/>
-</div>
-
-<div id="pageToolbar"></div>
-<script type="text/javascript" src="/frontstatic/paging/js/jquery-1.11.2.js"></script>
-<script type="text/javascript" src="/frontstatic/paging/js/query.js"></script>
-<script type="text/javascript" src="/frontstatic/paging/js/paging.js"></script>
 <script>
-  $('#pageTool').Paging({pagesize:10,count:${total},current:${vo.pageable.currentPage},callback:function(page,size,count){
-   // alert('当前第 ' +page +'页,每页 '+size+'条,总页数：'+count+'页');
-     window.location.href="/content/${topic.id}.htm?start="+((page-1)*size)+"&length="+size;
-  }});
+	
 </script>
+<link rel="stylesheet" href="/frontstatic/css/discuss.css">
+<script charset="utf-8" async="" src="/frontstatic/js/discussCenter.js"></script>
+
+<%--<link type="text/css" href="css/style.css" rel="stylesheet">
+<link type="text/css" href="css/common_v119.css" rel="stylesheet">--%>
+<link type="text/css" href="/frontstatic/css/info.css" rel="stylesheet">
+<%--<link rel="stylesheet" href="css/share_style0_16.css">--%>
+
+	<jsp:include page="../common/header_style.jsp"/>
+	<%@include file="../common/taglib.jsp"%>
+</head>
+<body style="position: relative;">
+
+
+	<div id="page">
+
+		<jsp:include page="../common/header.jsp" />
+
+		<div class="nk-container">
+
+
+			<div class="nk-main clearfix" style="padding-top: 2px;">
+				<div class="mini-banner">
+					<a href="" target="_blank"><img src="/frontstatic/images/826546_1482116809065_960x80.jpg"></a>
+				</div>
+				<!--主体内容-->
+				<div class="nk-content">
+					<div class="module-box">
+						<div class="module-head clearfix">
+							<div class="module-head-oprt">
+								<a class="btn btn-primary btn-b-publish nc-req-auth"
+									href="https://www.nowcoder.com/discuss/post?type=0"> <i
+									class="ico-submit"></i> 我要发布
+								</a>
+							</div>
+							<h2>分享与求助</h2>
+						</div>
+						<div class="tags-box tag-mod">
+							<a href="https://www.nowcoder.com/discuss?type=0&amp;order=0"
+								class="tag-label selected">全部</a> <a
+								href="https://www.nowcoder.com/discuss?type=4&amp;order=0"
+								class="tag-label">站内公告</a> <a
+								href="https://www.nowcoder.com/discuss?type=2&amp;order=0"
+								class="tag-label">笔经面经</a> <a
+								href="https://www.nowcoder.com/discuss?type=6&amp;order=0"
+								class="tag-label">我要提问</a> <a
+								href="https://www.nowcoder.com/discuss?type=1&amp;order=0"
+								class="tag-label">技术交流</a> <a
+								href="https://www.nowcoder.com/discuss?type=9&amp;order=0"
+								class="tag-label">职业发展</a> <a
+								href="https://www.nowcoder.com/discuss?type=7&amp;order=0"
+								class="tag-label">招聘信息</a> <a
+								href="https://www.nowcoder.com/discuss?type=5&amp;order=0"
+								class="tag-label">资源分享</a> <a
+								href="https://www.nowcoder.com/discuss?type=3&amp;order=0"
+								class="tag-label">猿生活</a>
+						</div>
+						<div class="menu-txt-box">
+							<ul class="menu-txt clearfix">
+								<li class="selected"><a
+									href="https://www.nowcoder.com/discuss?order=0&amp;type=0">最新回复</a>
+								</li>
+								<li class="menu-pipe">|</li>
+								<li><a
+									href="https://www.nowcoder.com/discuss?order=3&amp;type=0">最新发表</a>
+								</li>
+								<li class="menu-pipe">|</li>
+								<li><a
+									href="https://www.nowcoder.com/discuss?order=1&amp;type=0">最热</a>
+								</li>
+								<li class="menu-pipe">|</li>
+								<li><a
+									href="https://www.nowcoder.com/discuss?order=4&amp;type=0">精华</a>
+								</li>
+							</ul>
+						</div>
+						<div class="module-body">
+							<ul class="common-list">
+								<%--<li class="clearfix"><a class="head-pic"
+									data-card-uid="450315"
+									href="https://www.nowcoder.com/profile/450315"
+									data-card-index="1"><img alt="头像"
+										src="/frontstatic/images/450315_1475116367502_C21C18731D0C9B0BDD14C81BD06F16400e_100w.jpg"></a>
+									<div class="discuss-detail">
+										<div class="discuss-main clearfix">
+											<a
+												href="https://www.nowcoder.com/discuss/20129?type=0&amp;order=0&amp;pos=1&amp;page=1"
+												target="_blank"> 免费领取牛客定制版鼠标垫+精美贴纸！ <span class="disTop">置顶</span>
+											</a>
+										</div>
+										<div class="feed-foot">
+											<div class="feed-origin">
+												<p class="feed-tip">
+													<a class="d-name level-color-6" data-card-uid="450315"
+														href="https://www.nowcoder.com/profile/450315"
+														data-card-index="2"> 我家的狗不咬人</a>&nbsp;&nbsp; 2016-12-12
+													&nbsp;&nbsp;发表在 <a
+														href="https://www.nowcoder.com/discuss?type=4"> [站内公告]</a>&nbsp;&nbsp;
+													最后回复&nbsp;&nbsp;6天前
+												</p>
+											</div>
+											<div class="feed-legend">
+												<span>回复<span class="feed-legend-num">1</span></span> <span
+													class="feed-legend-pipe">|</span> <span>赞<span
+													class="feed-legend-num">0</span></span> <span
+													class="feed-legend-pipe">|</span> <span>浏览<span
+													class="feed-legend-num">1330</span></span>
+											</div>
+										</div>
+									</div></li>--%>
+
+								<c:forEach items="${list}" varStatus="i" var="item">
+
+								<li class="clearfix"><a class="head-pic"
+									data-card-uid="826546"
+									href=""
+									data-card-index="3"><img alt="头像"
+										src="/frontstatic/images/826546_1476151364876_2BB901EB065225630E64E5B07FE0A9E50e_100w.jpg"></a>
+									<div class="discuss-detail">
+										<div class="discuss-main clearfix">
+											<a href="/topic/content/${item.id}.htm" target="_blank"> ${item.name} <span
+												class="disTop">置顶</span>
+											</a>
+										</div>
+										<div class="feed-foot">
+											<div class="feed-origin">
+												<p class="feed-tip">
+													<a class="d-name level-color-8" data-card-uid="826546"
+														href="https://www.nowcoder.com/profile/826546"
+														data-card-index="4"> 牛妹</a>&nbsp;&nbsp; <fmt:formatDate value="${item.createTime}" pattern="yyyy-MM-dd"/>
+													&nbsp;&nbsp;发表在 <a
+														href="https://www.nowcoder.com/discuss?type=1"> [技术交流]</a>&nbsp;&nbsp;
+													最后回复&nbsp;&nbsp;1小时前
+												</p>
+											</div>
+											<div class="feed-legend">
+												<span>回复<span class="feed-legend-num">${item.count}</span></span> <span
+													class="feed-legend-pipe">|</span> <span>赞<span
+													class="feed-legend-num">0</span></span> <span
+													class="feed-legend-pipe">|</span> <span>浏览<span
+													class="feed-legend-num">1181</span></span>
+											</div>
+										</div>
+									</div></li>
+								</c:forEach>
+
+
+							</ul>
+							<div class="pagination">
+								<ul data-total="512">
+									<li class="txt-pager disabled js-first-pager"><a
+										data-page="1" href="javascript:void(0)">首页</a></li>
+									<li class="txt-pager disabled js-pre-pager"><a
+										data-page="1" href="javascript:void(0)">上一页</a></li>
+									<li class="active js-1-pager"><a href="javascript:void(0)"
+										data-page="1">1</a></li>
+									<li class="js-2-pager"><a
+										href="https://www.nowcoder.com/discuss?type=0&amp;order=0&amp;page=2"
+										data-page="2">2</a></li>
+									<li class="js-3-pager"><a
+										href="https://www.nowcoder.com/discuss?type=0&amp;order=0&amp;page=3"
+										data-page="3">3</a></li>
+									<li class="js-4-pager"><a
+										href="https://www.nowcoder.com/discuss?type=0&amp;order=0&amp;page=4"
+										data-page="4">4</a></li>
+									<li class="js-5-pager"><a
+										href="https://www.nowcoder.com/discuss?type=0&amp;order=0&amp;page=5"
+										data-page="5">5</a></li>
+									<li class="js-6-pager"><a
+										href="https://www.nowcoder.com/discuss?type=0&amp;order=0&amp;page=6"
+										data-page="6">6</a></li>
+									<li class="js-7-pager"><a
+										href="https://www.nowcoder.com/discuss?type=0&amp;order=0&amp;page=7"
+										data-page="7">7</a></li>
+									<li class="js-8-pager"><a
+										href="https://www.nowcoder.com/discuss?type=0&amp;order=0&amp;page=8"
+										data-page="8">8</a></li>
+									<li class="txt-pager js-next-pager"><a data-page="2"
+										href="https://www.nowcoder.com/discuss?type=0&amp;order=0&amp;page=2">下一页</a></li>
+									<li class="txt-pager js-last-pager"><a data-page="512"
+										href="https://www.nowcoder.com/discuss?type=0&amp;order=0&amp;page=512">末页</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--主体内容结束-->
+				<div class="nk-bar">
+					<div class="module-box column-nk">
+						<div class="module-head clearfix">
+							<h1>牛客专栏</h1>
+						</div>
+						<div class="module-body">
+							<ul class="column-nk-list">
+								<li><a
+									href="https://www.nowcoder.com/discuss/zhuanlan/723?type=0">
+										<h4 class="column-nk-item column-nk-topic">每日话题</h4>
+										<div class="column-nk-txt">
+											每天聊点儿有趣的 <span class="column-nk-time">还有23小时结束</span>
+										</div>
+								</a></li>
+								<li><a
+									href="https://www.nowcoder.com/discuss/zhuanlan/724?type=0">
+										<h4 class="column-nk-item column-nk-talk">牛客访谈</h4>
+										<div class="column-nk-txt">
+											与大牛零距离交流 <span class="column-nk-time">还有6天结束</span>
+										</div>
+								</a></li>
+								<li><a
+									href="https://www.nowcoder.com/discuss/zhuanlan/725?type=0">
+										<h4 class="column-nk-item column-nk-code">编程之美</h4>
+										<div class="column-nk-txt">
+											每周编程进阶实操 <span class="column-nk-time">还有3天结束</span>
+										</div>
+								</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!--主体内容结束-->
+			<div class="fixed-menu" style="display: block; bottom: 111.5px;">
+				<ul>
+					<li><a href="#top" class="gotop" title="回到顶部" id="gotop"></a>
+					</li>
+					<li><a class="fixed-wb" target="_blank"
+						href="http://www.weibo.com/nowcoder"></a></li>
+					<li><a
+						href="tencent://groupwpa/?subcmd=all&amp;param="
+						class="qq" title="QQ"></a></li>
+					<li><a href="javascript:void(0);" class="wx"></a>
+						<div class="wx-qrcode">
+							<img src="/frontstatic/images/wx-rcode.jpg" alt="二维码">
+							<p>扫描二维码，关注牛客网</p>
+						</div></li>
+					<li><a href="https://www.nowcoder.com/discuss/30"
+						class="feedback" title="意见反馈"></a> <a
+						href="https://www.nowcoder.com/discuss/30" class="feedback-letter">意见反馈</a>
+					</li>
+					<li><a href="javascript:void(0);" class="qrcode"></a>
+						<div class="wx-qrcode">
+							<img src="/frontstatic/images/app.png" alt="二维码">
+							<p>下载牛客APP，随时随地刷题</p>
+						</div></li>
+				</ul>
+				<div class="phone-qrcode" style="">
+					<a href="javascript:void(0);" class="qrcode-close">x</a> <img
+						src="/frontstatic/images/app.png" alt="二维码"
+						style="width: 70px; height: 70px;">
+					<p>扫一扫下载牛客APP</p>
+				</div>
+			</div>
+			<jsp:include page="../common/footer.jsp" />
+
+		</div>
 </body>
 </html>

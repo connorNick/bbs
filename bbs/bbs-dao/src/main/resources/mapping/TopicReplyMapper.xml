@@ -116,7 +116,9 @@
   </update>
 
   <select id="findTopicReplyList" parameterType="com.shareniu.bbs.common.common.PageVo" resultMap="BaseResultMap">
-    SELECT <include refid="Base_Column_List"/>
+    SELECT
+    id, content, user_id, topic_id, create_time, parent_repay_id,ip,
+    (select username from user where id=user_id) as username
     FROM topic_reply where 1=1
     <if test="vo.parameters.topicId!=null">
       and topic_id =#{vo.parameters.topicId}

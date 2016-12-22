@@ -1,327 +1,251 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="zh" class="ie8"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="zh">
-<!--<![endif]-->
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
-%>
-<head>
-    <meta charset="utf-8" />
-    <title>主页面</title>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-    <!-- ================== BEGIN BASE CSS STYLE ================== -->
- <%--   <jsp:include page="../common/header_style.jsp"/>--%>
-    <%@include file="../common/taglib.jsp"%>
-    <link rel="stylesheet" type="text/css" href="/frontstatic/css/style_2_common.css">
-    <link rel="stylesheet" type="text/css" href="/frontstatic/css/style_2_forum_viewthread.css">
-    <link rel="stylesheet" type="text/css" href="/frontstatic/paging/css/paging.css">
-    <!-- ================== END BASE CSS STYLE ================== -->
-</head>
-<jsp:include page="../common/header.jsp"/>
-<body id="nv_forum" class="pg_viewthread" onkeydown="if(event.keyCode==27) return false;">
-
-
-<div class="bottombg">
-
-
-
-    <!-- /topnav -->
-
-    <div id="wp" class="wp">
-
-        <%--
-                <div class="wp bgcc">
-                    <div class="aacd">
-                        <div id="pt" class="bm cl">
-                            <div class="z">
-                                <a href="" class="nvhm" title="首页">a</a>
-                                <a href="" style="margin-left:5px;">首页</a><em>›</em>
-                                <a href="">论坛首页</a> <em>›</em>
-                                <a href="">互动活动</a> <em>›</em>
-                                <a href="">最新活动</a> <em>›
-                            </em> <a href="">${topic.name}</a>
-                            </div>
-                        </div>
-
-                <!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
-            </div>
-        </div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb"><head>
+<title>PSD56个淘宝内部Banner图片PSD源文件_优设记(ui3g)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<%--
+<link type="text/css" href="css/style.css" rel="stylesheet"/>
+<link type="text/css" href="css/common_v119.css" rel="stylesheet"/>
 --%>
+<link type="text/css" href="/frontstatic/css/info.css" rel="stylesheet"/>
+<%--<link rel="stylesheet" href="/frontstatic/css/share_style0_16.css"/>--%>
 
-        <div id="ct" class="wp cl">
-            <div id="pgta" class="pgs mbm cl ">
-                <div class="pgt"></div>
-                    <span class="y pgb" id="visitedforums" onmouseover="">
-                    <a href="">返回列表</a></span>
-                <div class="fatie">
-                   <%-- <a id="newspecial" onmouseover="" onclick=""
-                       href="javascript:;" title="发新帖">发新帖</a>--%></div></div>
+    <jsp:include page="../common/header_style.jsp"/>
+    <%@include file="../common/taglib.jsp"%>
+</head>
 
-            <div id="postlist" class="pl bm">
-                <table class="aabbdd" cellpadding="0" cellspacing="0">
-                    <tbody><tr>
-                        <td class="pls ptn pbn sdad">
-                            <div class="hm ptn">
-                               <%-- <span class="xg1">查看:</span> &lt;%&ndash;<span class="xi1">695</span>&ndash;%&gt;<span class="pipe">|</span><span class="xg1">回复:</span>
-                                <span class="xi1">0</span>--%>
-                            </div>
-                        </td>
-                        <td class="plc ptm pbn vwthd sdad">
-                            <div class="y">
-<%--                                <a href="" title="打印" target="_blank"><img src="/frontstatic/images/print.png" alt="打印" class="vm"></a>
-                                <a href="" title="上一主题"><img src="/frontstatic/images/thread-prev.png" alt="上一主题" class="vm"></a>
-                                <a href="" title="下一主题"><img src="/frontstatic/images/thread-next.png" alt="下一主题" class="vm"></a>--%>
-                            </div>
-                            <h1 class="ts">
-                                <span id="thread_subject"> ${topic.name}</span>
-                            </h1>
-                                    <span class="xg1">
-                                    <%--<a href="" onclick="">[复制链接]</a>--%>
-                                    </span>
-                        </td>
-                    </tr>
-                    </tbody></table>
+<body><iframe style="display: none;" id="sina_anywhere_iframe"></iframe>
+<div id="page">
 
+	<jsp:include page="../common/header.jsp" />
+          
+        
+        <div id="site-content">
+    
+    <div id="content-wrapper" class="grid-site cfix">
+		
 
-                <table class="ad" cellpadding="0" cellspacing="0">
-                    <tbody><tr>
-                        <td class="pls">
-                        </td>
-                        <td class="plc">
-                        </td>
-                    </tr>
-                    </tbody></table><div class="postaaa posta0" id="post_4714"><table id="pid4714" class="plhin" summary="pid4714" cellpadding="0" cellspacing="0">
-                <tbody><tr>
-                    <td class="pls" rowspan="2">
-                        <div id="favatar4714" class="pls favatar">
-                            <a name="lastpost"></a><div class="pi">
-                            <div class="authi"><a href="" target="_blank" class="xw1"> </a>
-                            </div>
+            	<div class="projectblock cfix">	
+                	
+                    <div id="puinfo">
+                        <div id="puinfobody">
+                            <h3> ${topic.name}</h3><!--标题后台输入最长15个汉字-->
+                            <p>
+                            	系统分类： <a title="网页设计" href="http://www.ui3g.com/sheji/">网页设计</a><span class="separator"> - </span>
+                                <a title="Banner广告" href="http://www.ui3g.com/banner/">Banner广告</a>
+                                <span class="ui-icon yy-time"><fmt:formatDate value="${topic.createTime}" pattern="yyyy-MM-dd"/></span>
+                                <input name="wangpanlink" id="wangpanlink" value="http://pan.baidu.com/s/1c0xUID6" type="hidden">
+                             </p>
                         </div>
-                            <div class="p_pop blk bui card_gender_0" id="userinfo4714" style="display: none; margin-top: -11px;">
-                                <div class="m z">
-                                    <div id="userinfo4714_ma"></div>
-                                </div>
-                                <div class="i y">
-                                    <div>
-                                        <strong><a href="" target="_blank" class="xi2"></a></strong>
-                                        <em>当前离线</em>
-                                    </div><dl class="cl">
-                                   <%-- <dt>积分</dt><dd><a href="" target="_blank" class="xi2">5410</a></dd>--%>
-                                </dl><div class="imicn">
-                                   <%-- <a href="" target="_blank" title="查看详细资料"><img src="/frontstatic/images/userinfo.gif" alt="查看详细资料"></a>--%>
-                                </div>
-                                    <div id="avatarfeed"><span id="threadsortswait"></span></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="avatar" onmouseover="showauthor(this, 'userinfo4714')"><a href="" class="avtm" target="_blank">
-                                    <img src="/frontstatic/images/avatar.jpg"></a></div>
-                            </div>
-                            <div class="tns xg2"><%--<table cellpadding="0" cellspacing="0"><tbody><tr>
-                                <th><p>
-                                <a href="" class="xi2">645</a></p>主题</th><th>
-                                <p><a href="" class="xi2">650</a></p>帖子</th>
-                                <td><p><a href="" class="xi2">5410</a></p>积分</td></tr>
-                            </tbody></table>--%></div>
-
-                            <p><em><a href="" target="_blank">管理员</a></em></p>
-
-
-                            <p><span><img src="/frontstatic/images/star_level3.gif" alt="Rank: 9"><img src="/frontstatic/images/star_level3.gif" alt="Rank: 9">
-                                <img src="/frontstatic/images/star_level1.gif" alt="Rank: 9"></span></p>
-                            <dl class="pil cl">
-                                <dt>积分</dt><dd><a href="" target="_blank" class="xi2">5410</a></dd>
-                            </dl>
-
-                            <dl class="pil cl"></dl><ul class="xl xl2 o cl">
-<%--                            <li class="pm2"><a href="" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>--%>
-                        </ul>
-                        </div>
-                    </td>
-
-                    <td class="plc">
-                        <div class="pi">
-                            <%--<div id="fj" class="y">
-                                <label class="z">电梯直达</label>
-                                <input class="px p_fre z" size="2"  onkeydown="" title="跳转到指定楼层" type="text">
-                                <a href="javascript:;" id="fj_btn" class="z" title="跳转到指定楼层">
-                                    <img src="/frontstatic/images/fj_btn.png" alt="跳转到指定楼层" class="vm"></a>
-                            </div>--%>
-                            <strong>
-                                <%--<a href="" id="postnum4714" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
-                                    楼主</a>--%>
-                            </strong>
-                            <div class="pti">
-                                <div class="pdbt">
-                                </div>
-                                <div class="authi">
-                                    <img class="authicn vm" id="authicon4714" src="/frontstatic/images/online_admin.gif">
-                                    <em id="authorposton4714">发表于 <fmt:formatDate value="${topic.createTime}" pattern="yyyy-MM-dd"/></em>
-                                    <span class="pipe">|</span>
-<%--                                    <a href="" rel="nofollow">只看该作者</a>--%>
-<%--                                    <span class="none"><img src="/frontstatic/images/arw_r.gif" class="vm" alt="回帖奖励"></span>--%>
-<%--                                    <span class="pipe show">|</span><a href="" class="show">倒序浏览</a>
-                                    <span class="pipe show">|</span><a href="javascript:;" onclick="readmode($('thread_subject').innerHTML, 4714);" class="show">阅读模式</a>--%>
-                                </div>
-                            </div>
-                        </div><div class="pct"><div class="pcb">
-
-                        <div class="t_fsz">
-                            <table cellpadding="0" cellspacing="0"><tbody><tr><td class="t_f" id="postmessage_4714">
-                                <br>
-                                <div><font color="#333333"><font face="arial, 微软雅黑,">&nbsp; &nbsp;
-                                    <p style="line-height:30px;text-indent:2em;text-align:left">为
-
+                        <span class="fr" id="prenqi"><span>人气</span>${topic.count}</span>
+                    </div>
+                    <div class="clear"></div>
+                    <p id="plicense">亲们该页面内会员们分享的“作品”，版权为才华横溢的原作者们所有滴，不得商业使用！</p>
+                    <div id="projectpost">
+                    	<ul>
+                           
+                        	<li class="tupic"><%--<a target="_blank" href=""><img src="/frontstatic/images/271420130926141608_38575.jpg"></a>--%>
                                 ${topic.content}
-                                </p>
-                                </font></font></div><br>
-                                <div align="center"><strong><font face="宋体"><font size="7"><font color="#ff0000"><br>
-                                </font></font></font></strong></div><br>
-                                <br>
-                            </td></tr></tbody></table>
+                            </li>
+<%--                            <li class="tupic">56个源文件banner设计下载</li>--%>
+                            
+                        </ul>
+                        
+			<%--<div class="banquan">
+  
+        <dl>
+          <dd>
+            ================<strong>关于优设记</strong>================<br>
+“优设记ui3g.com“是国内最全jquery插件下载 - 高质量网页素材的学习下载平台<br>
 
-                            <%--<div class="modact"><a href="" title="帖子模式" onclick="showWindow('viewthreadmod', this.href)">
-                                本主题由 System 于 2016-8-4 12:01 解除限时高亮</a></div>--%>
-                            <div class="attach_nopermission attach_tips">
-                            <%--<div>
-                                <h3><strong>本帖子中包含更多资源</strong></h3>
-                                <p>您需要 <a href="" onclick="showWindow('login', this.href);return false;">登录</a> 才可以下载或查看，没有帐号？
-                                    <a href="" title="注册帐号">立即注册</a> </p>
-                            </div>
-                            <span class="atips_close" onclick="this.parentNode.style.display='none'">x</span>--%>
-                        </div>
+<strong>资源微博</strong>：同步网站更新内容，订阅jquery资源 @吐槽优设记，欢迎关注获取网页设计资源、下载顶尖设计素材。
 
-                        </div>
-                        <div id="comment_4714" class="cm">
-                        </div>
-
-                        <div id="post_rate_div_4714"></div>
-
-                        <div id="relate_subject"></div>
-                    </div>
+          </dd>
+          <dd>
+            <span>文章链接： </span><a href="http://www.ui3g.com/design/uiweb-369.html">http://www.ui3g.com/design/uiweb-369.html</a> <span>非特殊说明，本文版权归原作者所有，转载请注明出处</span>
+          </dd>
+        
+      </dl></div>--%>
                     </div>
 
-                    </td></tr>
-                <tr><td class="plc plm">
-                    <div id="p_btn" class="mtw mbm hm cl">
-
-                        <a href="" id="k_favorite" onclick="" onmouseover="this.title = $('favoritenumber').innerHTML + ' 人收藏'" title="收藏本帖"><i>
-                            <img src="/frontstatic/images/fav.gif" alt="收藏">收藏<span id="favoritenumber" style="display:none">0</span></i></a>
-                    </div>
-                    <div class="mtw mbw">
-                            <table border="0" >
-                                <c:forEach items="${trlist}" varStatus="vs" var="item" >
-                                 <tr>
-                                     <td bgcolor="#7fffd4" colspan="2">${vs.count} 楼# 匿名--<fmt:formatDate value="${item.createTime}" pattern="yyyy-MM-dd"/></td>
-                                 </tr>
-                                <tr>
-                                    <td colspan="2" height="50px">${item.content}</td>
-                                </tr>
-                                </c:forEach>
-                                <tr text-align="right">
-                                    <td></td>
-                                    <td text-align="right">
-                                        <div id="pageTool"></div>
-                                    </td>
-                                </tr>
-                            </table>
-                    </div>
-               <%-- </td>
-                </tr>--%>
-               <%-- <tr id="_postposition4714"></tr>--%>
-               <%-- <tr>
-                    <td class="pls"></td>
-                    <td class="plc" style="overflow:visible;">
-                        <div class="po hin">
-                            <div class="pob cl">
-                                   &lt;%&ndash; <a class="fastre" href="" onclick="showWindow('reply', this.href)">回复</a>&ndash;%&gt;
-
-                            </div>
-                        </div>
-                    </td>
-                </tr>--%>
-               <%-- <tr class="ad">
-                    <td class="pls">
-                    </td>
-                    <td class="plc">
-                    </td>
-                </tr>--%>
-                </tbody></table>
+               
+               <%--<div id="div_to_down_area" style="opacity:0; top:-500px; width:528px; height:300px" class="showbox1 fixed hide">
+    	<div id="popuplai" class="popuplitem fixed-container">
+        	<div id="pplhead" style="margin-bottom:18px;">
+            	<div class="pplc">PSD56个淘宝内部Banner图片PSD源文件</div>
             </div>
-
-                <%--<div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>
-            </div>--%>
-
-
-
-
-            <div class="pgs mtm mbm cl" id="pgtb">
-                <span class="pgb y" id="visitedforumstmp">
-                    <a href="/topic/list">返回列表</a>
-                </span>
-                <div class="fatie"><%--<a id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&amp;action=newthread&amp;fid=92')" href="javascript:;" title="发新帖">发新帖</a>--%></div>
+            <div class="pplc">
+            	<h2 class="jq">
+                    <span>我当前G币余额：</span><soan id="mycost" class="num">0</soan>
+                    <span>已下载次数：</span><span class="num">951</span>
+                </h2>
+                <small>注：购买该插件的用户当日可免费下载 插件作者可永久免费下载</small>
+                <div class="ddom">
+                    <h2 class="fl">
+                      <span>所需G币：</span><span id="needcost" class="num">20</span>
+                        <a href="http://www.ui3g.com/score.html" target="_blank"><img class="downwh" src="/frontstatic/images/wh.png"></a>
+                    </h2>
+                     
+                                   <a id="to_download" href="javascript:void(0);"><img src="/frontstatic/images/wpan1.png" title="百度云盘PSD下载" style="width: 220px; height:74px; " width="220" vspace="0" hspace="0" height="40" border="0"></a>
+                                    
+                </div>
+                <p class="txt-center">下载提示：由于文件较小，请直接点击下载，不支持迅雷等下载工具。</p>
+                
+                <h3 style="display: block;" class="warn">
+                    <span>抱歉</span> <a href="http://www.ui3g.com/score.html" target="_balnk">G币</a> <span>不足，你可以通过</span> <a href="http://www.ui3g.com/me/web/" target="_balnk">上传PSD</a> &amp;  <a href="http://www.ui3g.com/me/code/" target="_balnk">jquery</a> <span>或</span> <a href="http://www.ui3g.com/me/pointbuy/" target="_balnk">充值</a> <span>获得G币</span>
+                </h3>
+                
+                <h3 style="display: none;" class="pass">
+                    <span>由于</span> <span class="reason"></span> <span>你可以直接下载，不消耗G币</span>
+                </h3>
             </div>
+            <button type="button" class="close_layer close_showbg"><img src="/frontstatic/images/btn_close.png" width="24" height="24"></button>
+        </div>
+</div>--%>
 
 
-            <div id="f_pst" class="pl bm bmw">
-                <form method="post"  id="repayFrom" action="/topicreply/add.htm">
-                    <input type="hidden" name="topicId" value="${topic.id}"/>
-                    <input type="hidden" name="parentRepayId" value="0"/>
-                    <input type="hidden" name="userId" value="0"/>
-                    <table cellpadding="0" cellspacing="0">
-                        <tbody><tr>
-                            <td class="pls">
-                            </td>
-                            <td class="plc">
-                                <span id="fastpostreturn">评论</span>
-                                <div class="cl">
-                                    <div class="hasfsl" id="fastposteditor">
-                                            <textarea cols="100" rows="5" name="content"></textarea>
-                                            <input type="submit" name="提交"/>
+                    <div id="projectfoot">
+                    	<div style="overflow:hidden">
+                         
+                             <a class="plike" id="not_like_info" href="javascript:void();"><span class="ui-icon yy-likew"></span>收 藏 (<span id="like_count" class="likecount">53</span>)</a>
+                            
+                            <!--<a class="add-to-collection" href="#"><span class="ui-icon yy-addc"></span>转采到收集(<span class="likecount">15</span>)</a> 以后再使用-->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="otherbox cfix">
+                	
+                	<div class="comments-header" id="comments-header">
+            			<!--<h4 class="block-title">我还是很喜欢你，像风走了八千里，不问归期 多一点耐心少一点浮躁有什么新鲜事想告诉大家? 分享有礼<b style="color:red;"> +5G币</b>:(已有<span class="comments-total">73</span> 评论)</h4>-->
+                                 <h4 class="block-title">据说认真评论作品的以后都迅速成长为大神了(已有<span class="comments-total">73</span> 评论)</h4>
+    				</div>
+                    <div class="block-content">
+                    	<div class="post-comment-block" id="pinglun">
+                        	<input id="infoId" name="infoId" value="369" type="hidden">
+                           <input id="Info_UserID" name="Info_UserID" value="27" type="hidden">
+                            <input id="Info_Title" name="Info_Title" value="PSD56个淘宝内部Banner图片PSD源文件" type="hidden">
+                            <input id="productCover" name="productCover" value="/frontstatic/images/302120130926141608_38575.jpg" type="hidden">
+                            <input id="InfoType" name="InfoType" value="0" type="hidden">
+                             <input id="save_type" name="save_type" value="0" type="hidden">
+                            	<div id="comment-container" class="form-item form-item-textarea ui-front">
+                                	<textarea id="comment" cols="60" rows="10" class="form-textarea comment_text ui-autocomplete-input" name="comment" autocomplete="off"></textarea>
+								</div>
+                                <div id="comments-form-submit-container" class="form-item form-item-a">
+                                <input id="Btn_comments-form-submit" class="form-button form-button-default" value="发表评论" type="button">
                                 </div>
-                                <div id="seccheck_fastpost">
-                                </div>
-                                <p class="ptm pnpost">
-                                </p>
-                            </td>
-                        </tr>
-                        </tbody></table>
-                </form>
-            </div>
+							
+						</div>
 
-           <%-- <div id="visitedforums_menu" class="p_pop blk cl" style="display: none;">
-                <table cellpadding="0" cellspacing="0">
-                    <tbody><tr>
-                        <td id="v_forums">
-                            <h3 class="mbn pbn bbda xg1">浏览过的版块</h3>
-                            <ul class="xl xl1">
-                                <li><a href="">高薪课程</a></li><li>
-                                <a href="">Hadoop</a></li><li>
-                                <a href="">大数据行业资讯</a></li></ul>
-                        </td>
-                    </tr>
-                    </tbody></table>
-            </div>--%>
+                        <div id="comments-list-container">
+                        	<ul class="comments-list" id="comments-list">
+                            
+                            	<li data-id="11470287" class="comment-container cfix user-comment">
+                                      <a href="http://www.ui3g.com/sky/ui-18649.html" class="comment-user-image-link fl">
+                                    
+                                        <img src="/frontstatic/images/100_002.jpg" class="comment-user-image js-mini-profile">
+                                      </a>
+                                      <div class="comment-text-container">
+                                            <div class="comment-user-date-wrap">
+                                              <a href="http://www.ui3g.com/sky/ui-18649.html" class="user-name-link bold">阳光下的约定</a> <span class="comment-date"> 2016-11-09</span>
+                                            
+                                            </div>
+                                            <div class="comment-text-wrap" id="re_Coment_list_4699">
+                                                <div class="comment-text">
+                                                哈哈 ，真的不错么
+                                                     <a class="cm-s5 " dataid="4699" href="javascript:void();">[回复]</a>
+                                                 </div>
+                                                
+                                             </div>
+                                             <!--div以内的所有内容html输出为空-->
+                                             <div class="postreply" id="ToCommnet_4699" style="display:none;">
+                                             	<textarea autocomplete="off" class="inputnone" id="comment4699"></textarea>
+                                                <span class="submitwarning" style="display: inline-block;">内容不能少于4个字</span>
+                                                <a class="submitbtn canclbtn" href="javascript:void();" dataid="4699">取消评论</a>
+                                                <input class="submitbtn" id="re_Comment_Submit4699&quot;" dataid="4699" onclick="SubmitCommentsData('4699')" value="确认回复" type="button">
+                                           
+                                                <div class="clear"></div>
+                                             </div>  
+                                      </div>
+                                </li>
+                                
+                            	
+                                
+                            	<li data-id="11470287" class="comment-container cfix user-comment">
+                                      <a href="http://www.ui3g.com/sky/ui-17585.html" class="comment-user-image-link fl">
+                                    
+                                        <img src="/frontstatic/images/100.jpg" class="comment-user-image js-mini-profile">
+                                      </a>
+                                      <div class="comment-text-container">
+                                            <div class="comment-user-date-wrap">
+                                              <a href="http://www.ui3g.com/sky/ui-17585.html" class="user-name-link bold">Yannis</a> <span class="comment-date"> 2016-09-21</span>
+                                            
+                                            </div>
+                                            <div class="comment-text-wrap" id="re_Coment_list_4401">
+                                                <div class="comment-text">
+                                                谢谢
+                                                     <a class="cm-s5 " dataid="4401" href="javascript:void();">[回复]</a>
+                                                 </div>
+                                                
+                                             </div>
+                                             <!--div以内的所有内容html输出为空-->
+                                             <div class="postreply" id="ToCommnet_4401" style="display:none;">
+                                                 <form method="post"  id="repayFrom" action="/topicreply/add.htm">
+                                                     <input type="hidden" name="topicId" value="${topic.id}"/>
+                                                     <input type="hidden" name="parentRepayId" value="0"/>
+                                                     <input type="hidden" name="userId" value="0"/>
+                                                    <textarea autocomplete="off" name="content" class="inputnone" id="comment4401"></textarea>
+                                                    <span class="submitwarning" style="display: inline-block;">内容不能少于4个字</span>
+                                                    <a class="submitbtn canclbtn" href="javascript:void();" dataid="4401">取消评论</a>
+                                                    <input class="submitbtn" id="re_Comment_Submit4401&quot;" dataid="4401" onclick="SubmitCommentsData('4401')" value="确认回复" type="button"/>
+
+                                                 </form>
+
+                                                <div class="clear"></div>
+                                             </div>  
+                                      </div>
+                                </li>
+                                
+                            	
+                                
+
+                            </ul>
+                        </div>
+                          <div id="pages">
+                          <a href="http://www.ui3g.com/design/uiweb-369-1.html#pinglun" id="pageactive"> 1</a>
+                              <a href="http://www.ui3g.com/design/uiweb-369-2.html#pinglun">2</a>
+                              <a href="http://www.ui3g.com/design/uiweb-369-3.html#pinglun">3</a>  <a href="http://www.ui3g.com/design/uiweb-369-4.html#pinglun">4</a>
+                              <a href="http://www.ui3g.com/design/uiweb-369-6.html#pinglun">6</a><a href="http://www.ui3g.com/design/uiweb-369-7.html#pinglun">7</a><span>...</span>
+                              <a href="http://www.ui3g.com/design/uiweb-369-2.html#pinglun" id="pagenext"><span class="ui-icon ui-ppr"></span></a>
+                    </div>
+                    </div>
+                </div>
+                    
+            </div>
         </div>
 
-    </div>
 
-</div>
-<script type="text/javascript" src="/frontstatic/paging/js/jquery-1.11.2.js"></script>
-<script type="text/javascript" src="/frontstatic/paging/js/query.js"></script>
-<script type="text/javascript" src="/frontstatic/paging/js/paging.js"></script>
-<script>
-    $('#pageTool').Paging({pagesize:10,count:${total},current:${vo.pageable.currentPage},callback:function(page,size,count){
-       // alert('当前第 ' +page +'页,每页 '+size+'条,总页数：'+count+'页');
-        window.location.href="/topic/content/${topic.id}.htm?start="+((page-1)*size)+"&length="+size;
-    }});
+        
+ <jsp:include page="../common/footer.jsp" />
+ 
+ 
+ 
+         
+<script src="/frontstatic/js/jquery-1_002.js" type="text/javascript"></script>
+<script src="/frontstatic/js/jquery-1.js" type="text/javascript"></script>
+<script src="/frontstatic/js/CheckCommon.js" type="text/javascript"></script>
+<script src="/frontstatic/js/Helper.js" type="text/javascript"></script>
+<script src="/frontstatic/js/ajax_REST-1.js" type="text/javascript"></script>
+<script src="/frontstatic/js/js-jiaoben.js" type="text/javascript"></script>
+<script type="text/javascript">
+    //back to top
+$(window).scroll(function(){var scrTop=$(window).scrollTop();var windowTop=$(window).height();if(scrTop<=68){$(".navboxbg").css({top:"0",left:"0",position:"relative","z-index":"998"});$("#showcase-and-discover").css('margin-top','12px');$("#sorts-container").css({position:"relative",top:"0"});$("#o_helper").css('display','none')}else if(scrTop>366){$("#sorts-container").css({position:"fixed",top:"34px"});$(".navboxbg").css({top:"0",left:"0",position:"fixed","z-index":"999"});$("#o_helper").css('display','block')}else{$(".navboxbg").css({top:"0",left:"0",position:"fixed","z-index":"999"});$("#showcase-and-discover").css('margin-top','46px');$("#sorts-container").css({position:"relative",top:"0"});$("#o_helper").css('display','block')}});
+//
+eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[01]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$("#sub_advincetous").click(function(){alertMsg("提示信息","想必您有宝贵的意见建议，欢迎加入我们的0群咨询.<1>UI3g优设记0群号：153364618<1>Email邮箱: info@ui3g.com")});',[],2,'QQ|br'.split('|'),0,{}))
 </script>
-<jsp:include page="../common/footer.jsp"/>
-</body>
-</html>
+  
+    </div>
+<script src="/frontstatic/js/homejs-like.js" type="text/javascript"></script>
+
+
+</body></html>

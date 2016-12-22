@@ -1,0 +1,59 @@
+﻿/*Company:ui3g.com
+* Developer: samantuotuo
+* Date: 2013-12-24 */
+.y_ibanner{width:1145px;height:274px;position:relative;overflow:hidden; margin:0 auto;}
+
+.y_ibanner .citemslide{
+    height: 274px;
+    position: relative;
+    width:876px;
+	float:left;
+	background:#292929;
+}.citemslide .slidecon{ position:absolute; width:25px; height:45px;text-align:center;top:110px; background-color:rgba(0,0,0,.5); transition:left 0.3s ease-out,right 0.3s ease-out,background-color 0.3s ease-out;}
+.citemslide .slidecon span{ margin-top:12px;}
+.citemslide .slidecon:hover{background-color: #6bc30d;}
+.citemslide .slideprev{ left:-25px}
+.citemslide .slidenext{ right:-25px;}
+.citemslide:hover .slideprev{ left:0px}
+.citemslide:hover .slidenext{ right:0px}
+#citemss{ overflow:hidden; height:274px; width:650px; position:relative;}
+#citemss ul{ position:absolute;}
+.ui-pp2 {width:11px; height:18px; background-position: -16px -9px}
+.ui-rotate,.ui-rotatem:hover{-webkit-transform:rotate(180deg);transform:rotate(180deg);*background-position: -67px -9px}
+.y_ibanner
+.y_right_banner{width:190px;padding-top:18px;left:670px;top:0;position:absolute;color:#d1d1d1; background:#292929;}
+.y_ibanner .y_right_banner.on{ display:none;}
+.y_ibanner .y_right_banner dt {
+    height: 190px;
+}.y_ibanner .y_right_banner .namebox_img {
+    float: left;
+    margin-right: 5px;
+}.y_ibanner .y_right_banner .namebox_name {
+    color: #D1D1D1;
+    float: left;
+}.y_ibanner .y_right_banner .namebox_name a {
+    color: #D1D1D1;
+    line-height: 20px;
+}.y_ibanner .y_right_banner .namebox_name a:hover{color:#e1e1e1}
+.y_right_banner .text_yellow_i {
+    color: #3BD177 !important; margin-left:4px;
+}.y_ibanner .y_right_banner .namebox_name a.cisuc{ width:80px; display:block; font-size: 12px;height: 22px;line-height: 22px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; color:#3BD177;}
+.y_ibanner .y_right_banner .namebox_name a.cisuc:hover{color:#a5ea5c}
+.y_ibanner .y_right_banner .namebox_img img{-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;webkit-transition: 1s ease all;
+  -moz-transition: 1s ease all;}
+.y_ibanner .y_right_banner .namebox_img img:hover{-webkit-transform: rotate(-190deg);
+  -moz-transform: rotate(-190deg);}  
+.home-rpic{ float:right; width:240px; overflow:hidden;}
+.home-rpic .img img{ margin-bottom:7px;}
+
+.dark-header-wrapper {width: 100%; margin:12px 0;}
+#navmenui-primary {margin-bottom: 0; min-width: 0; position: fixed; width: 100%; top: 0; left: 0;}
+
+#sonewsbody{ float:left; width:566px; height:40px; overflow:hidden; font-size:13px;}#sonewsbody a{ color:#34bf49; margin:5px;}
+.voiceRight{ position:absolute;right:-64px;top:50%;margin-top:-13px;z-index:10;}
+.do{height:26px;width:31px; display:inline-block; background:url(../images/ui/nano.gif) no-repeat left top;margin-right:-1px; position:relative;}
+.uo{height:26px;width:31px; display:inline-block; background:url(../images/ui/nano.gif) no-repeat right top; position:relative;}
+.do:hover{background:url(../images/ui/nano.gif) no-repeat left bottom;z-index:1;}
+.uo:hover{background:url(../images/ui/nano.gif) no-repeat right bottom;z-index:1;}
+
+#links{width:1084px; padding:20px 30px; background:#fff; margin:0 auto 30px;line-height:24px}#links span{ color: #3E3E3E;margin-right: 10px;}#links a{ color:#949494; margin-right:20px; }

@@ -10,4 +10,10 @@ public interface UserService {
 
 
     User getUserByUserName(String username);
+
+    User getUserByEmail(String email);
+
+    int save(User user);
+
+    int updateUser(User user);
 }

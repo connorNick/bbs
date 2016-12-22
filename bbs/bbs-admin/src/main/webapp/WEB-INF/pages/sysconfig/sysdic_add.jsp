@@ -84,6 +84,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="name">图片</label>
+                                <input type="text" class="form-control input-lg" name="imgUrl" value="${dictionary.imgUrl}" placeholder="请输入值"  data-parsley-required="true" data-parsley-required-message="值不能为空">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="name">字典描述</label>
                                 <input type="text" class="form-control input-lg" name="description" value="${dictionary.description}" placeholder="请输入字典描述"  data-parsley-required="true" data-parsley-required-message="字典描述不能为空">
                             </div>

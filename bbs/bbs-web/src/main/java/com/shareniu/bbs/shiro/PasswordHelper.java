@@ -35,8 +35,8 @@ public class PasswordHelper {
 
     public static void main(String[] args) {
         User u = new User();
-        u.setUsername("admin");
-        u.setPassword("admin");
+        u.setUsername("550145191@qq.com");
+        u.setPassword("13569633175");
         new PasswordHelper().encryptPassword(u);
         System.out.println(u.getPassword() + "-" + u.getSalt());
     }

@@ -34,4 +34,8 @@ public class TopicServiceImpl implements TopicService {
     public List<Topic> getTopicList(){
         return topicMapper.getTopicList();
     }
+
+    public List<Topic> getTopFiveTopicList(){
+        return topicMapper.getTopFiveTopicList();
+    }
 }

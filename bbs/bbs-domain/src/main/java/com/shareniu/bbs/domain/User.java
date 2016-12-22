@@ -1,8 +1,9 @@
 package com.shareniu.bbs.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable{
     private Integer id;
 
     private String name;
@@ -149,5 +150,9 @@ public class User {
 
     public void setCredentialsSalt(String credentialsSalt) {
         this.credentialsSalt = credentialsSalt;
+    }
+    public void clearPassword() {
+        this.password = null;
+        this.salt = null;
     }
 }
