@@ -94,11 +94,9 @@
   <select id="findDictionaryList" parameterType="com.shareniu.bbs.common.common.PageVo" resultMap="BaseResultMap" >
     SELECT <include refid="Base_Column_List" /> FROM dictionary a where del_flag = 0
     <if test="vo.parameters.type!=null">
-      and type LIKE CONCAT(#{vo.parameters.type},'%' )
+      and type = #{vo.parameters.type}
     </if>
-    <if test="vo.parameters.description!=null">
-      or description LIKE CONCAT(#{vo.parameters.description},'%' )
-    </if>
+     order by create_time desc
   </select>
 
 
