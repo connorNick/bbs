@@ -272,7 +272,7 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
         $(document).ready(function(){
 
             $("#topicPage").jqPaginator({
-                totalCounts: ${total},//设置总条数
+                totalCounts: ${total==0?1:total},//设置总条数
                 visiblePages: 9,//设置最多显示的页码数（例如有100也，当前第1页，则显示1 - 7页）
                 currentPage: ${vo.pageable.currentPage},//设置当前的页码
                 pageSize:5,//设置每一页的条目数,注意：要么设置totalPages，要么设置totalCounts + pageSize，否则报错；设置了totalCounts和pageSize后，会自动计算出totalPages。
