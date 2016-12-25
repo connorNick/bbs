@@ -43,12 +43,10 @@
 									href="https://www.nowcoder.com/discuss?order=0&amp;type=0">最新回复</a>
 								</li>--%>
 								<li class="menu-pipe">|</li>
-								<li><a
-									href="https://www.nowcoder.com/discuss?order=3&amp;type=0">最新发表</a>
+								<li><a href="">最新发表</a>
 								</li>
 								<li class="menu-pipe">|</li>
-								<li><a
-									href="https://www.nowcoder.com/discuss?order=1&amp;type=0">最热</a>
+								<li><a href="">最热</a>
 								</li>
 								<li class="menu-pipe">|</li>
 								<%--<li><a
