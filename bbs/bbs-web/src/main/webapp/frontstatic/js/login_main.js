@@ -1,3 +1,4 @@
+
 jQuery(document).ready(function($){
     var $form_modal = $('.cd-user-modal'),
         $form_login = $form_modal.find('#cd-login'),
@@ -5,8 +6,9 @@ jQuery(document).ready(function($){
         $form_modal_tab = $('.cd-switcher'),
         $tab_login = $form_modal_tab.children('li').eq(0).children('a'),
         $tab_signup = $form_modal_tab.children('li').eq(1).children('a'),
-        $main_nav = $('.main_nav');
-
+        $main_nav = $('.register_pan');
+    $('#kaptchaImage').click(function() {$(this).attr('src','Kaptcha.jpg?' + Math.floor(Math.random() * 100));});
+    $('#kaptchaImage2').click(function() {$(this).attr('src','Kaptcha.jpg?' + Math.floor(Math.random() * 100));});
     //弹出窗口
     $main_nav.on('click', function(event){
 
@@ -22,6 +24,9 @@ jQuery(document).ready(function($){
             ( $(event.target).is('.cd-signup') ) ? signup_selected() : login_selected();
         }
 
+    });
+    $(".searchBtn").on('click',function(event){
+        window.location.href="/topic/list?name="+$("#searchName").val();
     });
 
     //关闭弹出窗口
@@ -56,6 +61,59 @@ jQuery(document).ready(function($){
         $tab_login.removeClass('selected');
         $tab_signup.addClass('selected');
     }
+
+    //login
+    $('#login').on('click', function(event){
+        var username=$("#loginForm").find("input[name='username']").val();
+        var password=$("#loginForm").find("input[name='password']").val();
+        var captcha=$("#loginForm").find("input[name='captcha']").val();
+        jQuery.ajax({
+            url:"/dologin",
+            type: "POST",
+            data: {
+                username: username,
+                password: password,
+                captcha:captcha
+            },
+            dataType:"json",
+            cache: false,
+            success : function(data) {
+                if (data != 'success') {
+                    $("#msg").html(data);
+                }else{
+                    location.href="/index";
+                }
+            }
+        });
+    });
+
+    //register
+    $('#registerBtn').on('click', function(event){
+        var username=$("#registerForm").find("input[name='username']").val();
+        var password=$("#registerForm").find("input[name='password']").val();
+        var email=$("#registerForm").find("input[name='email']").val();
+        var captcha=$("#registerForm").find("input[name='captcha']").val();
+        jQuery.ajax({
+            url:"/register",
+            type: "POST",
+            data: {
+                username: username,
+                password: password,
+                email: email,
+                captcha:captcha
+            },
+            dataType:"json",
+            cache: false,
+            success : function(data) {
+                if (data != 'success') {
+                    $("#msg2").html(data);
+                }else{
+                    location.href="/index";
+                }
+            }
+        });
+
+    });
 
 });
 

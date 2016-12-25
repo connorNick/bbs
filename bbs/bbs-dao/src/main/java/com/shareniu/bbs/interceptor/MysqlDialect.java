@@ -10,6 +10,7 @@ import org.apache.ibatis.mapping.ParameterMapping;
 
 import org.apache.ibatis.mapping.ParameterMapping.Builder;
 
+import java.sql.*;
 import java.util.List;
 import java.util.Map;
 
@@ -30,4 +31,28 @@ public class MysqlDialect implements Dialect {
         parameterMappings.add(parameterMapping);
         return pageSql.toString();
     }
+   /* public static void main(String[] args) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bbs", "root", "root");
+            Statement st = con.createStatement();
+            //插入一个空对象empty_blob()
+            //st.executeUpdate("insert into TESTBLOB (ID, NAME, BLOBATTR) values (1, "thename", empty_blob())");
+            //锁定数据行进行更新，注意“for update”语句
+            ResultSet rs = st.executeQuery("select content from topic where id=9");
+            if (rs.next()) {
+                //得到java.sql.Blob对象后强制转换为oracle.sql.BLOB
+                *//*Blob blob = rs.getBlob("content");*//*
+                byte[] content=rs.getBytes("content");
+                //byte[] b = blob.getBytes(1, (int)blob.length());
+                String result = new String(content);
+                System.out.println(result);
+            }
+            con.commit();
+            con.close();
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e);
+        }
+    }*/
 }

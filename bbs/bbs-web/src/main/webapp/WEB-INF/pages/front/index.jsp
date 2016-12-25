@@ -3,7 +3,7 @@
 <html style="height: 100%;" xmlns:wb="http://open.weibo.com/wb" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>优设记 - 最全jquery插件下载 - 高质量网页素材</title>
+<title>分享牛 - 最热门的技术专站点 - </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <jsp:include page="../common/header_style.jsp"/>
@@ -32,7 +32,7 @@
                                   <div class="cover-name">
                                     <a href="/topic/list?categoryId=${item.id}">${item.rmsValue}</a>
                                   </div>
-                                  <<%--div class="cover-by-wrap">
+                                  <%--div class="cover-by-wrap">
                                     <div class="cover-by-link ">by
                                         <a target="_blank" href="" class="text-ellipsis single-owner-link">${item.createUser}</a>
                                     </div>
@@ -58,16 +58,11 @@
         
 
                     <div class="clear"></div>
-                    <div id="pages">
-                    <a href="http://www.ui3g.com/index-1.html" id="pageactive"> 1</a> 
-                    <a href="http://www.ui3g.com/index-2.html">2</a>  
-                    <a href="http://www.ui3g.com/index-3.html">3</a>  
-                    <a href="http://www.ui3g.com/index-4.html">4</a>  
-                    <a href="http://www.ui3g.com/index-5.html">5</a>  
-                    <a href="http://www.ui3g.com/index-6.html">6</a>  
-                    <a href="http://www.ui3g.com/index-7.html">7</a> <span>...</span> 
-                    <a href="http://www.ui3g.com/index-2.html" id="pagenext"><span class="ui-icon ui-ppr"></span></a>
+
+                    <div class="demo customBootstrap">
+                        <ul id="demo2" class="pagination"></ul>
                     </div>
+
                 </div>
                  
 
@@ -78,10 +73,6 @@
                             <c:forEach items="${topiclist}" varStatus="i" var="item">
                                 <li><a href="/topic/content/${item.id}.htm" title="${item.name}">${item.name}</a></li>
                             </c:forEach>
-<%--                          <li><a href="http://www.ui3g.com/texiao/" title="jquery特效">jquery特效</a></li>
-                          <li><a href="http://www.ui3g.com/css3/" title="css3">css3动画</a></li>
-                          <li><a href="http://www.ui3g.com/uisou.html?uikey=PSD" title="PSD">PSD</a></li>
-                          <li><a href="http://www.ui3g.com/app/" title="移动应用">移动应用</a></li>    --%>
                         </ul>
                      </div>
 			<!----><%--<div class="filter-block floor-fixed-panel">
@@ -154,31 +145,11 @@
 }
            .wp{ margin:0 auto; width:1000px;}
             </style>
-            <script type="text/javascript">
-            jQuery(document).ready(function(){
-            window.setTimeout('oshowInfo();', 2000);
-            })
-            function oshowInfo(falg){
-            if(getcookie('o_hideInfo') != 1 || falg ==1){
-            jQuery("#o_helper_c .o_info").show();
-            setcookie('o_hideInfo', 0, 9000);
-            }
-            }
-            function ohideInfo(){
-            jQuery("#o_helper_c .o_info").hide();
-            if(getcookie('o_hideInfo') != 1){
-            setcookie('o_hideInfo', 1, 900);
-            }
-            }
-            </script>
-            <!-- 小O助手 -->
+
         </div>
-<!-- <script src="js/jquery-1_002.js" type="text/javascript"></script> -->
-<script src="/frontstatic/js/jquery-1.js" type="text/javascript"></script>
-<script src="/frontstatic/js/CheckCommon.js" type="text/javascript"></script>
-<script src="/frontstatic/js/Helper.js" type="text/javascript"></script>
-<script src="/frontstatic/js/ajax_REST-1.js" type="text/javascript"></script>
-<!-- <script src="js/js-jiaoben.js" type="text/javascript"></script> -->
+
+<script type="text/javascript" src="/frontstatic/jqPaginator/js/jqPaginator.js"></script>
+
 <script type="text/javascript">
 	
     //back to top
@@ -189,7 +160,7 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
     </div>  
     <script type="text/javascript">
         //图片轮滚：star
-        $(function () {
+        $(document).ready(function(){
             var sWidth = $("#citemss").width(); //获取焦点图的宽度（显示面积）
             var len = $("#citemss ul li").length; //获取焦点图个数
             var index = 0;
@@ -236,6 +207,24 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
                 $(".citemslide .y_right_banner").removeClass("on").eq(index).addClass("on"); //为当前的按钮切换到选中的效果
                 $(".citemslide .y_right_banner").stop(true, false).addClass("on").eq(index).stop(true, false).removeClass("on"); //为当前的按钮切换到选中的效果
             }
+
+
+            $("#demo2").jqPaginator({
+                totalCounts: ${total},//设置总条数
+                visiblePages: 9,//设置最多显示的页码数（例如有100也，当前第1页，则显示1 - 7页）
+                currentPage: ${vo.pageable.currentPage},//设置当前的页码
+                pageSize:10,//设置每一页的条目数,注意：要么设置totalPages，要么设置totalCounts + pageSize，否则报错；设置了totalCounts和pageSize后，会自动计算出totalPages。
+                first: '<li class="first"><a href="javascript:void(0);">首页<\/a><\/li>',
+                prev: '<li class="prev"><a href="javascript:void(0);"><i class="arrow arrow2"><\/i>上一页<\/a><\/li>',
+                next: '<li class="next"><a href="javascript:void(0);">下一页<i class="arrow arrow3"><\/i><\/a><\/li>',
+                last: '<li class="last"><a href="javascript:void(0);">末页<\/a><\/li>',
+                page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+                onPageChange: function (n,type) {
+                    if(type!='init'){
+                        window.location.href="/index?start="+((n-1)*10)+"&length="+10;
+                    }
+                }
+            });
         });
 
 

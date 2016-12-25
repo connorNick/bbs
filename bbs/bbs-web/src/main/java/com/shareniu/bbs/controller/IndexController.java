@@ -3,8 +3,10 @@ package com.shareniu.bbs.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import com.shareniu.bbs.common.common.EnumDirectoryType;
+import com.shareniu.bbs.common.common.PageVo;
 import com.shareniu.bbs.domain.Dictionary;
 import com.shareniu.bbs.domain.Topic;
+import com.shareniu.bbs.interceptor.PageList;
 import com.shareniu.bbs.service.IDictionaryService;
 import com.shareniu.bbs.service.TopicService;
 import org.slf4j.Logger;
@@ -31,9 +33,15 @@ public class IndexController extends BaseController {
 	 */
 	@RequestMapping("/index")
 	public ModelAndView index(ModelAndView mv,HttpServletRequest request){
-		List<Dictionary> list=iDictionaryService.getDictionaryListByType(EnumDirectoryType.TECHNIQUE.getCode());
+		PageVo vo =  parametToPageVo(request);
+		vo.getParameters().put("type",EnumDirectoryType.TECHNIQUE.getCode());
+		PageList<Dictionary> list=iDictionaryService.findDictionaryList(vo);
 		List<Topic> topiclist=topicService.getTopFiveTopicList();
+		//分页信息及技术列表
+		mv.addObject("vo",vo);
+		mv.addObject("total",list.getTotalCount());
 		mv.addObject("techlist",list);
+		//热帖列表
 		mv.addObject("topiclist",topiclist);
 		mv.setViewName("/front/index");
 		return mv;

@@ -63,79 +63,50 @@ public class LoginController extends BaseController{
      *
      */
     @RequestMapping("/dologin")
-    public String dologin(HttpServletRequest request, HttpServletResponse response,Model mode) {
+    public @ResponseBody JsonResult dologin(HttpServletRequest request, HttpServletResponse response,Model mode) {
         String loginFailure = (String) request.getAttribute("shiroLoginFailure");
         JsonResult loginMessage=new JsonResult();
-        User user=new User();
         //可以在这里放 错误信息  从这里就可以拿到认证异常了
         if (loginFailure != null) {
-        	 String username = WebUtils.getCleanParam(request,"username");
-             String password = WebUtils.getCleanParam(request,"password");
-             user.setUsername(username);
-             user.setPassword(password);
-             mode.addAttribute("user",user);
-          if (UnknownAccountException.class.getName().equals(loginFailure)) {  
+          if (UnknownAccountException.class.getName().equals(loginFailure)) {
         	  loginMessage.setMsg("用户名或密码不正确");        	  
-        	  mode.addAttribute("loginNameMessage", loginMessage);
-        	  return "forward:/userlogin";
-          } else if (IncorrectCredentialsException.class.getName().equals(loginFailure)) {                    
+          } else if (IncorrectCredentialsException.class.getName().equals(loginFailure)) {
         	  loginMessage.setMsg("用户名或密码不正确");
-        	  mode.addAttribute("loginPwdMessage", loginMessage);
-        	  return "forward:/userlogin";
-          }else if(IncorrectCaptchaException.class.getName().equals(loginFailure)){  
+          }else if(IncorrectCaptchaException.class.getName().equals(loginFailure)){
         	  loginMessage.setMsg("验证码不正确");
-        	  mode.addAttribute("loginCodeMessage", loginMessage);
-        	  return "forward:/userlogin";
-          }else {  
+          }else {
         	  loginMessage.setMsg("未知错误");
-        	  mode.addAttribute("loginMessage",loginMessage);
-        	  return "forward:/userlogin";
-          }         
+          }
        }
-       if(isAuthenticated()){
-            user.setId(getUser().getId());
-            user.setLastLogionIp(getIpAddr(request));
-            user.setLastLoginTime(new Date());
-            userService.updateUser(user);
-           CookieUtils.addCookie(request, response,
-                   Constant.USERNAME_COOKIE_NAME, user.getUsername(), 2592000);
-       }
-        return "redirect:/index";
+        return loginMessage;
     }
     /**
      *
      */
     @RequestMapping("register")
-    public String register(User user, HttpServletRequest request, HttpServletResponse response) {
-        user.setUsername(user.getEmail());
+    public@ResponseBody String register(User user, HttpServletRequest request, HttpServletResponse response) {
         user = PasswordHelper.encryptPassword(user);
         user.setLastLogionIp(getIpAddr(request));
         String captcha=request.getParameter("captcha");
         String password=request.getParameter("password");
+        String code=WebUtils.getCleanParam(request, CAPTCHA_PARAM_NAME);
+        if(captcha==null&&!captcha.equals(code)){
+                return "验证码错误";
+        }
+        User user2=userService.getUserByEmail(user.getEmail());
+        if(user2!=null){
+            return "邮箱已被使用";
+        }
+        User user3=userService.getUserByUserName(user.getUsername());
+        if(user3!=null){
+            return "用户名已存在";
+        }
         int i=userService.save(user);
         if(i>0){
             UsernamePasswordToken token = new CaptchaUsernamePasswordToken(user.getUsername(),
                     password,true,null,captcha);
             Subject currentUser = SecurityUtils.getSubject();
             currentUser.login(token);
-            CookieUtils.addCookie(request, response,
-                    Constant.USERNAME_COOKIE_NAME, user.getUsername(), 2592000);
-        }
-        return "redirect:/index";
-    }
-
-    @RequestMapping("checkEmail")
-    public@ResponseBody String checkEmail(String email){
-        User user=userService.getUserByEmail(email);
-        if(user!=null){
-            return "fail";//存在
-        }
-        return "success";//不存在
-    }
-    @RequestMapping("checkCode")
-    public@ResponseBody String checkCode(@RequestParam("captcha") String code, HttpServletRequest request){
-        String captcha=WebUtils.getCleanParam(request, CAPTCHA_PARAM_NAME);
-        if(captcha!=null&&captcha.equals(code)){
             return "success";
         }
         return "fail";
