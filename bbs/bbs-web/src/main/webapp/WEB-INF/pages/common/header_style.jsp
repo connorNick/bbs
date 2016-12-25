@@ -9,10 +9,8 @@
 <link href="/frontstatic/css/common_v119.css" rel="stylesheet" />
 <link href="/frontstatic/css/index_ui3g.css" rel="stylesheet" />
 <link href="/frontstatic/css/share_style0_16.css" rel="stylesheet" />
-<%--
-<link href="/frontstatic/css/style_2_forum_viewthread.css" rel="stylesheet" />
-<link href="/frontstatic/css/index.css" rel="stylesheet" />
-<link href="/frontstatic/css/main.css" rel="stylesheet" />
-<link href="/frontstatic/css/cssreset.css" rel="stylesheet" />
-<link href="/frontstatic/css/fix.css" rel="stylesheet" />
-<link href="/frontstatic/css/float.css" rel="stylesheet" />--%>
+
+<link type="text/css" rel="stylesheet" href="/frontstatic/jqPaginator/css/bootstrap.min.css"/>
+<link href="/frontstatic/jqPaginator/css/paging_self_style.css" rel="stylesheet" />
+
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.7.1/jquery.min.js"></script>
