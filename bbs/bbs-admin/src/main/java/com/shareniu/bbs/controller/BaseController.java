@@ -67,7 +67,6 @@ public class BaseController {
         sortParameters.put("orderColumn", orderColumn);
         sortParameters.put("orderDir", orderDir);
         vo.setSort(sortParameters);
-        
         pageable.setCurrentPage((Integer.parseInt(start)/Integer.parseInt(length)+1));
         log.info("分页参数=>第X页："+(Integer.parseInt(start)/Integer.parseInt(length)+1));
         vo.setPageable(pageable);
