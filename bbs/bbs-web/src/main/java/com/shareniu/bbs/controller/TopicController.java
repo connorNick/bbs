@@ -1,9 +1,12 @@
 package com.shareniu.bbs.controller;
 
+import com.shareniu.bbs.common.common.EnumDirectoryType;
 import com.shareniu.bbs.common.common.PageVo;
+import com.shareniu.bbs.domain.Dictionary;
 import com.shareniu.bbs.domain.Topic;
 import com.shareniu.bbs.domain.TopicReply;
 import com.shareniu.bbs.interceptor.PageList;
+import com.shareniu.bbs.service.IDictionaryService;
 import com.shareniu.bbs.service.TopicReplyService;
 import com.shareniu.bbs.service.TopicService;
 import org.slf4j.Logger;
@@ -29,10 +32,14 @@ public class TopicController extends BaseController {
 
 	@Autowired
 	private TopicReplyService topicReplyService;
+	@Autowired
+	private IDictionaryService iDictionaryService;
 	@RequestMapping("/list")
 	public ModelAndView list(ModelAndView mv,HttpServletRequest request){
 		PageVo vo =  parametToPageVo(request);
 		PageList<Topic> list = topicService.findTopicList(vo);
+		List<Dictionary> diclist=iDictionaryService.getDictionaryListByType(EnumDirectoryType.TECHNIQUE.getCode());
+		mv.addObject("techlist",diclist);
 		mv.addObject("list",list);
 		mv.addObject("vo",vo);
 		mv.addObject("total",list.getTotalCount());

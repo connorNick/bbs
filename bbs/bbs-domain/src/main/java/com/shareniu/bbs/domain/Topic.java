@@ -11,6 +11,8 @@ public class Topic {
 
     private Integer createUserId;
 
+    private String categoryName;
+
     private Integer categoryId;
 
     private Integer count;
@@ -20,6 +22,9 @@ public class Topic {
     private Integer type;
 
     private String content;
+
+    private String username;
+
 
     public Integer getId() {
         return id;
@@ -90,6 +95,22 @@ public class Topic {
     }
 
     public void setContent(String content) {
-        this.content = content;
+            this.content = content;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

@@ -2,12 +2,12 @@ package com.shareniu.bbs.controller;
 
 import com.shareniu.bbs.common.JsonResult;
 import com.shareniu.bbs.common.common.DataTable;
+import com.shareniu.bbs.common.common.EnumDirectoryType;
 import com.shareniu.bbs.common.common.PageVo;
 import com.shareniu.bbs.common.constants.DirctionaryEnum;
 import com.shareniu.bbs.domain.Dictionary;
 import com.shareniu.bbs.domain.Topic;
 import com.shareniu.bbs.interceptor.PageList;
-import com.shareniu.bbs.service.IDictionaryService;
 import com.shareniu.bbs.service.TopicService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,6 +44,7 @@ public class TopicController extends BaseController {
 	@ResponseBody
 	public DataTable<Topic> queryTableData(HttpServletRequest request) {
 		PageVo vo =  parametToPageVo(request);
+		vo.getPageable().setPageSize(10);
 		PageList<Topic> list = topicService.findTopicList(vo);
 		DataTable data = resultToDataTable(list);
 		return data;
@@ -55,7 +56,7 @@ public class TopicController extends BaseController {
 	 */
 	@RequestMapping("/toadd")
 	public ModelAndView toAdd(ModelAndView mv){
-		List<Dictionary> list=getDictionaryListByTag(DirctionaryEnum.TOPIC_CATEGORY.name());
+		List<Dictionary> list=getDictionaryListByTag(EnumDirectoryType.TECHNIQUE.getCode());
 		mv.addObject("list",list);
 		mv.setViewName("topic/topic_add");
 		return mv;
@@ -68,7 +69,6 @@ public class TopicController extends BaseController {
 	public ModelAndView view(ModelAndView mv,@RequestParam("id")Integer id){
 		Topic topic=topicService.getTopicById(id);
 		mv.addObject("topic", topic);
-		System.out.println(topic.getContent());
 		mv.setViewName("topic/result");
 		return mv;
 	}
@@ -76,8 +76,8 @@ public class TopicController extends BaseController {
 	/**
 	 * 去往编辑-字典
 	 */
-	@RequestMapping("/toedit")
-	public ModelAndView toEdit(@RequestParam("id")Integer id, ModelAndView mv){
+	@RequestMapping("/toedit/{id}")
+	public ModelAndView toEdit(@PathVariable("id")Integer id, ModelAndView mv){
 		List<Dictionary> list=getDictionaryListByTag(DirctionaryEnum.TOPIC_CATEGORY.name());
 		mv.addObject("list",list);
 		mv.addObject("topic", topicService.getTopicById(id));
@@ -90,7 +90,6 @@ public class TopicController extends BaseController {
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public ModelAndView addUser(HttpServletRequest request,ModelAndView mv,Topic topic) {
-		System.out.println(topic.getContent());
 		if(topic.getId() != null && topic.getId() > 0){
 			topicService.updateTopic(topic);
 		}else{

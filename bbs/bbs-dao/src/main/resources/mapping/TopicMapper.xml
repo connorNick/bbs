@@ -10,10 +10,10 @@
     <result column="count" jdbcType="INTEGER" property="count" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="type" jdbcType="INTEGER" property="type" />
-    <result column="content" jdbcType="LONGVARBINARY" property="content" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shareniu.bbs.domain.Topic">
-    <result column="content" jdbcType="LONGVARBINARY" property="content" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
   </resultMap>
   <sql id="Base_Column_List">
     id, name, create_time, create_user_id, category_id, count, status, type
@@ -22,10 +22,9 @@
     content
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
+    select
+    id, name, create_time, create_user_id, category_id, count, status, type,content,
+    (select rms_value from dictionary where id=category_id) as categoryName
     from topic
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -48,13 +47,13 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.shareniu.bbs.domain.Topic">
-    insert into topic (id, name, create_time, 
-      create_user_id, category_id, count, 
+    insert into topic (id, name, create_time,
+      create_user_id, category_id, count,
       status, type, content
       )
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{createUserId,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}, 
-      #{status,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{content,jdbcType=LONGVARBINARY}
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+      #{createUserId,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, #{count,jdbcType=INTEGER},
+      #{status,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.shareniu.bbs.domain.Topic">
@@ -114,7 +113,7 @@
         #{type,jdbcType=INTEGER},
       </if>
       <if test="content != null">
-        #{content,jdbcType=LONGVARBINARY},
+        #{content,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -143,7 +142,7 @@
         type = #{type,jdbcType=INTEGER},
       </if>
       <if test="content != null">
-        content = #{content,jdbcType=LONGVARBINARY},
+        content = #{content,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -157,7 +156,7 @@
       count = #{count,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       type = #{type,jdbcType=INTEGER},
-      content = #{content,jdbcType=LONGVARBINARY}
+      content = #{content,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.shareniu.bbs.domain.Topic">
@@ -174,13 +173,17 @@
 
 
   <select id="findTopicList" parameterType="com.shareniu.bbs.common.common.PageVo" resultMap="BaseResultMap">
-    SELECT <include refid="Base_Column_List"/>
+    SELECT <include refid="Base_Column_List"/>,
+    (select username from user where id=create_user_id) as username
     FROM topic where 1=1
     <if test="vo.parameters.categoryId!=null">
       and category_id =#{vo.parameters.categoryId}
     </if>
     <if test="vo.parameters.type!=null">
       and type =#{vo.parameters.type}
+    </if>
+    <if test="vo.parameters.name!=null">
+      and name like CONCAT('%',#{vo.parameters.name},'%')
     </if>
   </select>
 

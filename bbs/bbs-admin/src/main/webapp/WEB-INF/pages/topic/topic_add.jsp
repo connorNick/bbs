@@ -1,8 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="zh">
+<html>
 <!--<![endif]-->
 <%
     String path = request.getContextPath();
@@ -76,7 +74,7 @@
                                 <label for="name">类型</label>
                                 <select id="categoryId">
                                     <c:forEach items="${list}" varStatus="i" var="item">
-                                        <option value="${item.rmsValue}">${item.rmsKey}</option>
+                                        <option value="${item.id}">${item.rmsValue}</option>
 
                                     </c:forEach>
                                 </select>
@@ -89,7 +87,7 @@
 
                             <div class="form-group">
                                 <label>内容</label>
-                                <textarea id="editor1" name="content" class="ckeditor">${topic.content}</textarea>
+                                <textarea id="editor1" htmlescape="true" name="content" class="ckeditor">${topic.content}</textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary m-r-5 m-b-5">提交</button>

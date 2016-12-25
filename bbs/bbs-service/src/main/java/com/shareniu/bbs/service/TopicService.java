@@ -10,6 +10,11 @@ public interface TopicService {
 
     PageList<Topic> findTopicList(PageVo vo);
 
+    /**
+     * 更新
+     * @param topic
+     * @return
+     */
     int updateTopic(Topic topic);
     int addTopic(Topic topic);
     Topic getTopicById(Integer id);
