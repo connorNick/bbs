@@ -13,7 +13,7 @@
 	<div id="page">
 	
 	      <jsp:include page="../common/header.jsp"/>
-      <jsp:include page="../common/bannar.jsp"/>
+     <%-- <jsp:include page="../common/bannar.jsp"/>--%>
 	
         <div id="site-content">
             <div id="content-wrapper" class="grid-site cfix">
@@ -22,7 +22,9 @@
                       <c:forEach items="${techlist}" varStatus="i" var="item">
                            <div class="cover-block project-cover cfix"><!--鼠标滑到图片上class="hover"-->
                             <div class="cover-img">
-                                <a href="/topic/list?categoryId=${item.id}" class="cover-img-link">
+                                <a href="/topic/list?categoryId=${item.id}"
+                                   onmouseover="this.style.cssText='opacity:0.65;filter:alpha(opacity=65);'"
+                                   onmouseout="this.style.cssText='text-decoration:none'">
                                     <img title="${item.rmsValue}" class="cover-img-el cover-img-standard"
                                        src="${item.imgUrl}" alt="${item.rmsValue}">
                                 </a>
