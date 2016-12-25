@@ -9,6 +9,7 @@ import com.shareniu.bbs.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,6 +27,7 @@ public class TopicServiceImpl implements TopicService {
         return topicMapper.updateByPrimaryKeySelective(topic);
     }
     public int addTopic(Topic topic){
+        topic.setCreateTime(new Date());
         return topicMapper.insert(topic);
     }
    public Topic getTopicById(Integer id){

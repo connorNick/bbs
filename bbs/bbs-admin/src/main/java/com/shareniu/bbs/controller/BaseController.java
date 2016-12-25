@@ -6,9 +6,11 @@ import com.shareniu.bbs.common.common.PageVo;
 import com.shareniu.bbs.common.common.Pageable;
 import com.shareniu.bbs.common.exception.ServiceException;
 import com.shareniu.bbs.domain.Dictionary;
+import com.shareniu.bbs.domain.SysUser;
 import com.shareniu.bbs.interceptor.PageList;
 import com.shareniu.bbs.service.IDictionaryService;
 import org.apache.commons.lang.StringUtils;
+import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -145,5 +147,27 @@ public class BaseController {
         return JsonResult.createSuccess(obj);
     }
 
-
+    /**
+     * 获取当前登录用户的信息
+     *
+     * @return 当前账户信息
+     */
+    public SysUser getUser() {
+        SysUser user = null;
+        if (isAuthenticated()) {
+            Object obj = SecurityUtils.getSubject().getPrincipal();
+            if (obj != null) {
+                user = (SysUser) obj;
+            }
+        }
+        return user;
+    }
+    /**
+     * 是否已认证
+     *
+     * @return boolean
+     */
+    public boolean isAuthenticated() {
+        return SecurityUtils.getSubject().isAuthenticated();
+    }
 }

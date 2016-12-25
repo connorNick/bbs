@@ -174,8 +174,10 @@
 
   <select id="findTopicList" parameterType="com.shareniu.bbs.common.common.PageVo" resultMap="BaseResultMap">
     SELECT <include refid="Base_Column_List"/>,
-    (select username from user where id=create_user_id) as username
-    FROM topic where 1=1
+    (select username from user where id=create_user_id) as username,
+    (select caclBeforeTime((select create_time from topic_reply  where topic_id=t.id order by create_time desc limit 1))) as beforeTimeDesc,
+    (select rms_value from dictionary where id=t.category_id) as categoryName
+    FROM topic t where 1=1
     <if test="vo.parameters.categoryId!=null">
       and category_id =#{vo.parameters.categoryId}
     </if>

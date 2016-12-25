@@ -93,6 +93,7 @@ public class TopicController extends BaseController {
 		if(topic.getId() != null && topic.getId() > 0){
 			topicService.updateTopic(topic);
 		}else{
+			topic.setCreateUserId(getUser().getId());
 			topicService.addTopic(topic);
 		}
 		mv.addObject("topic",topic);

@@ -25,6 +25,8 @@ public class Topic {
 
     private String username;
 
+    private String beforeTimeDesc;
+
 
     public Integer getId() {
         return id;
@@ -112,5 +114,13 @@ public class Topic {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getBeforeTimeDesc() {
+        return beforeTimeDesc;
+    }
+
+    public void setBeforeTimeDesc(String beforeTimeDesc) {
+        this.beforeTimeDesc = beforeTimeDesc;
     }
 }

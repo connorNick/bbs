@@ -109,8 +109,8 @@
 														href="https://www.nowcoder.com/profile/826546"
 														data-card-index="4"> ${item.username}</a>&nbsp;&nbsp; <fmt:formatDate value="${item.createTime}" pattern="yyyy-MM-dd"/>
 													&nbsp;&nbsp;发表在 <a
-														href="https://www.nowcoder.com/discuss?type=1"> [技术交流]</a>&nbsp;&nbsp;
-													最后回复&nbsp;&nbsp;1小时前
+														href="https://www.nowcoder.com/discuss?type=1"> [${item.categoryName}]</a>&nbsp;&nbsp;
+													最后回复&nbsp;&nbsp;${item.beforeTimeDesc}
 												</p>
 											</div>
 											<div class="feed-legend">
