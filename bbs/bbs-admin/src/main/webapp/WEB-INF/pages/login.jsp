@@ -22,8 +22,8 @@
             <!-- begin brand -->
             <div class="login-header">
                 <div class="brand">
-                    <span class="logo"></span> 桔子分期
-                    <small>催收管理系统</small>
+                    <span class="logo"></span> 分享牛
+                    <small>分享牛管理系统</small>
                 </div>
                 <div class="icon">
                     <i class="fa fa-sign-in"></i>
